@@ -14,7 +14,7 @@ export default defineComponent({
   <nav class="navbar is-focused is-fixed-top" role="navigation" aria-label="main navigation">
 
     <div class="navbar-brand">
-      <a class="navbar-item" href="http://localhost:5173/">
+      <a class="navbar-item" href="../#/">
         <figure class="image ">
           <img src="../../assets/mkaf.png">
         </figure>
@@ -23,7 +23,7 @@ export default defineComponent({
 
 
     <div class="navbar-start">
-      <a class="navbar-item" href="http://localhost:5173/">
+      <a class="navbar-item" href="../#/">
         <strong><router-link :to="{ name: 'homepage' }" class="navbar-item">Home</router-link></strong>
       </a>
     </div>
