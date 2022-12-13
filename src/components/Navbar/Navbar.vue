@@ -15,7 +15,7 @@ export default defineComponent({
 
     <div class="navbar-brand">
       <a class="navbar-item" href="../#/">
-        <figure class="image ">
+        <figure class="image">
           <img src="../../assets/mkaf.png">
         </figure>
       </a>
@@ -24,60 +24,32 @@ export default defineComponent({
 
     <div class="navbar-start">
       <a class="navbar-item" href="../#/">
-        <strong><router-link :to="{ name: 'homepage' }" class="navbar-item">Home</router-link></strong>
+        <strong>
+          <router-link :to="{ name: 'homepage' }" class="navbar-item">Home</router-link>
+        </strong>
       </a>
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <div class="navbar-item is-hoverable">
 
-            <!--            <a class="button is-light navbar-link ">-->
-            <!--              <strong>Sign up</strong>-->
-            <!--            </a>-->
-            <!--            -->
-            <!--            -->
-            <!--            -->
+          <div class="navbar-item is-hoverable">
             <span class="icon-text">
                 <span class="icon">
                   <i class="fa fa-user-plus" aria-hidden="true"></i>
                 </span>
             <span><router-link :to="{ name: 'signup' }" class="navbar-item">Sign Up</router-link></span>
             </span>
-
-
-<!--            <div class="navbar-dropdown">-->
-<!--              <input class="navbar-item" placeholder="Email">-->
-<!--              <input class="navbar-item" placeholder="Username">-->
-<!--              <input class="navbar-item" placeholder="Password">-->
-<!--              <hr class="navbar-divider">-->
-<!--              <button class="navbar-item has-background-danger">Submit</button>-->
-<!--            </div>-->
-
           </div>
 
           <div class="navbar-item is-hoverable">
-            <!--              <a class="button is-light navbar-link ">-->
-            <!--                Log in-->
-            <!--              </a>-->
-
             <span class="icon-text">
                 <span class="icon">
                   <i class="fa fa-sign-in" aria-hidden="true"></i>
                 </span>
             <router-link :to="{ name: 'login' }" class="navbar-item">Log In</router-link>
             </span>
-
-<!--            <div class="navbar-dropdown">-->
-<!--              <input class="navbar-item" placeholder="Username">-->
-<!--              <input class="navbar-item" placeholder="Password">-->
-
-<!--              <hr class="navbar-divider">-->
-<!--              <button class="navbar-item has-background-danger">Submit</button>-->
-
-<!--            </div>-->
-
           </div>
         </div>
       </div>

@@ -7,13 +7,13 @@ export default defineComponent({
 </script>
 
 <template>
+
   <div class="bg-img">
     <div class='container hero is-fullheight'>
       <header class="has-text-centered">
         <br>
         <br>
         <br>
-
       </header>
 
       <section class="hero is-transparent is-fullheight">

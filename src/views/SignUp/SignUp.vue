@@ -50,10 +50,7 @@ export default defineComponent({
                     </div>
                   </div>
                   <div class="field">
-                    <!--                    <label class="checkbox">-->
-                    <!--                      <input type="checkbox">-->
-                    <!--                      Remember me-->
-                    <!--                    </label>-->
+
                   </div>
                   <button id="Button" class="button is-block is-info is-large is-fullwidth">Submit <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
                 </form>

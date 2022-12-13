@@ -46,10 +46,6 @@ html, body {
   height: 100vh;
 }
 
-
-
-
-
 h1 {
   color: white;
 }
