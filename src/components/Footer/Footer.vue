@@ -10,7 +10,7 @@ export default defineComponent({
 
 <template>
 
-  <footer class="is-fixed-bottom is-small">
+  <footer class="is-fixed-bottom">
     <div class="content has-text-centered">
       <p>
         <strong>Bulma</strong> by <a href="#">Alex</a>. The source code is not licensed LOL

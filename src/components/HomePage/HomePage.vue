@@ -32,16 +32,10 @@ export default defineComponent({
 
 
 <style scoped>
-@media screen and (min-width: 1024px) {
-  .navbar-end .navbar-dropdown {
-    left: unset;
-    right: 0;
-  }
-}
 
-/*html, body {*/
-/*  height: 100vh;*/
-/*}*/
+html, body {
+  height: 100vh;
+}
 
 
 
