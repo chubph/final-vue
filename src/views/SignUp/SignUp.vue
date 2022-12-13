@@ -19,7 +19,6 @@ export default defineComponent({
         <br>
         <br>
         <br>
-
       </header>
 
       <section class="hero is-transparent is-fullheight">
