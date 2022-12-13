@@ -15,6 +15,8 @@ export default defineComponent({
 </script>
 
 <template>
+
+  <div class="bg-img">
   <header>
   <Navbar></Navbar>
   </header>
@@ -25,21 +27,24 @@ export default defineComponent({
 
 <!--  <HomePage></HomePage>-->
   <Footer></Footer>
+  </div>
 </template>
 
 <style >
+
+
 #color{
   background-color: yellow;
 
 }
 
 .bg-img {
-  background-image: url(https://wallpapercave.com/dwp1x/wp3660128.png);
+  /*background-image: url(https://wallpapercave.com/dwp1x/wp3660128.png);*/
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #999;
+  background-color: #071e36;
 
 }
 html, body {

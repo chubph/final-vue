@@ -13,13 +13,13 @@ export default defineComponent({
 
   <nav class="navbar is-focused is-fixed-top" role="navigation" aria-label="main navigation">
 
-    <div class="navbar-brand">
-      <a class="navbar-item" href="../#/">
-        <figure class="image">
-          <img src="../../assets/mkaf.png">
-        </figure>
-      </a>
-    </div>
+<!--    <div class="navbar-brand">-->
+<!--      <a class="navbar-item" href="../#/">-->
+<!--        <figure class="image">-->
+<!--          <img src="../../assets/mkaf.png">-->
+<!--        </figure>-->
+<!--      </a>-->
+<!--    </div>-->
 
 
     <div class="navbar-start">
@@ -60,15 +60,9 @@ export default defineComponent({
 
 <style scoped>
 
-@media screen and (min-width: 1024px) {
-  .navbar-end .navbar-dropdown {
-    left: unset;
-    right: 0;
-  }
-}
 
 nav {
-  background-color: #333367;
-  -webkit-text-fill-color: #72760a;
+  background-color: #041221;
+  -webkit-text-fill-color: papayawhip;
 }
 </style>
