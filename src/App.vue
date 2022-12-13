@@ -54,8 +54,12 @@ html, body {
 h1 {
   color: white;
 }
-#Button {
-  background-color: #333367;
+#DarkBlue {
+  background-color: #041221;
+}
+
+#NavbarBlue {
+  background-color: #071e36;
 }
 
 </style>
