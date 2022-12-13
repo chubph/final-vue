@@ -24,14 +24,14 @@ export default defineComponent({
 
     <div class="navbar-start">
       <a class="navbar-item" href="http://localhost:5173/">
-        <strong>Home</strong>
+        <strong><router-link :to="{ name: 'homepage' }" class="navbar-item">Home</router-link></strong>
       </a>
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-item is-hoverable">
 
             <!--            <a class="button is-light navbar-link ">-->
             <!--              <strong>Sign up</strong>-->
@@ -42,23 +42,22 @@ export default defineComponent({
             <span class="icon-text">
                 <span class="icon">
                   <i class="fa fa-user-plus" aria-hidden="true"></i>
-
                 </span>
-            <span>Sign Up</span>
+            <span><router-link :to="{ name: 'signup' }" class="navbar-item">Sign Up</router-link></span>
             </span>
 
 
-            <div class="navbar-dropdown">
-              <input class="navbar-item" placeholder="Email">
-              <input class="navbar-item" placeholder="Username">
-              <input class="navbar-item" placeholder="Password">
-              <hr class="navbar-divider">
-              <button class="navbar-item has-background-danger">Submit</button>
-            </div>
+<!--            <div class="navbar-dropdown">-->
+<!--              <input class="navbar-item" placeholder="Email">-->
+<!--              <input class="navbar-item" placeholder="Username">-->
+<!--              <input class="navbar-item" placeholder="Password">-->
+<!--              <hr class="navbar-divider">-->
+<!--              <button class="navbar-item has-background-danger">Submit</button>-->
+<!--            </div>-->
 
           </div>
 
-          <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-item is-hoverable">
             <!--              <a class="button is-light navbar-link ">-->
             <!--                Log in-->
             <!--              </a>-->
@@ -67,17 +66,17 @@ export default defineComponent({
                 <span class="icon">
                   <i class="fa fa-sign-in" aria-hidden="true"></i>
                 </span>
-            <span>Log In</span>
+            <router-link :to="{ name: 'login' }" class="navbar-item">Log In</router-link>
             </span>
 
-            <div class="navbar-dropdown">
-              <input class="navbar-item" placeholder="Username">
-              <input class="navbar-item" placeholder="Password">
+<!--            <div class="navbar-dropdown">-->
+<!--              <input class="navbar-item" placeholder="Username">-->
+<!--              <input class="navbar-item" placeholder="Password">-->
 
-              <hr class="navbar-divider">
-              <button class="navbar-item has-background-danger">Submit</button>
+<!--              <hr class="navbar-divider">-->
+<!--              <button class="navbar-item has-background-danger">Submit</button>-->
 
-            </div>
+<!--            </div>-->
 
           </div>
         </div>

@@ -52,8 +52,5 @@ html, body {
 h1 {
   color: white;
 }
-
-
-
 </style>
 
