@@ -16,7 +16,10 @@ export default defineComponent({
 
 <template>
 
-  <div class="bg-img">
+
+
+
+    <div class="bg-img">
   <header>
   <Navbar></Navbar>
   </header>

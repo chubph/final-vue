@@ -7,6 +7,9 @@ export default defineComponent({
   data() {
     return {
       games: [],
+      games2: [],
+      games3: [],
+      games4: [],
 
       game: {
         id: 0,
@@ -28,20 +31,47 @@ export default defineComponent({
     const gameList = result.results;
 
     const currentGames =[];
+    const currentGames2 =[];
+    const currentGames3 =[];
 
-    for (let i = 0; i < gameList.length; i++) {
+    // for (let i = 0; i < gameList.length; i++) {
+    //   const gameOne = {};
+    //   gameOne.id = gameList[i].id;
+    //   gameOne.name = gameList[i].name;
+    //   gameOne.image = gameList[i].background_image;
+    //   gameOne.rating = gameList[i].rating;
+    //
+    //   currentGames.push(gameOne)
+    //   console.log(gameOne)
+    // }
+
+    for (let i = 0; i < gameList.length / 2; i ++) {
+
       const gameOne = {};
       gameOne.id = gameList[i].id;
       gameOne.name = gameList[i].name;
       gameOne.image = gameList[i].background_image;
       gameOne.rating = gameList[i].rating;
+      currentGames2.push(gameOne)
 
-      currentGames.push(gameOne)
-      console.log(gameOne)
     }
 
+    for (let i = gameList.length - 1; i > gameList.length / 2; i --) {
+      const gameOne = {};
+      gameOne.id = gameList[i].id;
+      gameOne.name = gameList[i].name;
+      gameOne.image = gameList[i].background_image;
+      gameOne.rating = gameList[i].rating;
+      currentGames3.push(gameOne)
+
+    }
 
     this.games = currentGames;
+    this.games2 = currentGames2;
+    console.log(currentGames2)
+    this.games3 = currentGames3;
+    console.log(currentGames3)
+
 
 
   },
@@ -79,12 +109,12 @@ export default defineComponent({
         <br>
 
 
-        <section class="container "  v-for="game in games">
+        <section class="container"  v-for="game in games2">
 
           <div class="columns features is-centered " >
 <!--            giro giro-->
             <div class="column is-5 " >
-
+<!--background color card-->
               <div class="card is-shady is-small" id="cardCol">
                 <div class="card-image">
                   <figure class="image is-5by3">
@@ -95,6 +125,32 @@ export default defineComponent({
                   <div class="content">
                     <h4 class="has-text-white-bis">{{ game.name }}</h4>
                     <p > <strong class="has-text-white-bis"> Rating: {{ game.rating}}  <i class="fa fa-star" id="asteraki"></i> </strong></p>
+                    <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">?</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+
+        </section>
+
+        <section class="container"  v-for="element in games3">
+
+          <div class="columns features is-centered " >
+            <!--            giro giro-->
+            <div class="column is-5 " >
+              <!--background color card-->
+              <div class="card is-shady is-small" id="cardCol">
+                <div class="card-image">
+                  <figure class="image is-5by3">
+                    <img :src="(`${element.image}`)" alt="Placeholder image" class="modal-button" data-target="modal-image2">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="content">
+                    <h4 class="has-text-white-bis">{{ element.name }}</h4>
+                    <p > <strong class="has-text-white-bis"> Rating: {{ element.rating}}  <i class="fa fa-star" id="asteraki"></i> </strong></p>
                     <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">?</span>
                   </div>
                 </div>
