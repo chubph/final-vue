@@ -31,8 +31,9 @@ export default defineComponent({
       })
 
           .then((response) => response.json())
+          .then((message) => window.confirm("Welcome " + this.user.username + "!!!\nYou can now log in!!! 😎"))
           .catch(error => {
-            alert("User already exists try another username!")
+            window.alert("User already exists try another username!")
           })
 
     }
