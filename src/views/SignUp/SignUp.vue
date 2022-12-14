@@ -9,10 +9,6 @@ export default defineComponent({
 <template>
 
 
-
-
-
-
   <div class="bg-img">
     <div class='container hero is-fullheight'>
       <header class="has-text-centered">
