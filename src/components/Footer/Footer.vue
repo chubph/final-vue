@@ -31,8 +31,8 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #333367;
-  -webkit-text-fill-color: #72760a;
+  background-color: #041221;
+  -webkit-text-fill-color: papayawhip;
 }
 
 </style>
