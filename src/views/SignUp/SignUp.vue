@@ -5,26 +5,36 @@ export default defineComponent({
   name: "SignUp",
   data() {
     return {
-      users : [ {
+      user :  {
         username: "",
         password: "",
         email: "",
-      }]
+      }
     }
   },
 
   methods: {
     getApi: function()  {
-
-      fetch("http://localhost:8080/api/users", {
-        method: 'POST',
-        body: JSON.stringify({
-          username: this.user.username,
-          password: this.user.password,
-          email: this.user.email
-        }),
+      const apiUrl= "http://localhost:8080/api/users"
+      const body = JSON.stringify({
+        username: this.user.username,
+        password: this.user.password,
+        email: this.user.email
       })
-          .then((response) => response.json());
+      console.log(body)
+      fetch(apiUrl, {
+        method: 'POST',
+        body: body,
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+
+          .then((response) => response.json())
+          .catch(error => {
+            alert("User already exists try another username!")
+          })
+
     }
   }
 });
@@ -72,17 +82,17 @@ export default defineComponent({
                 <form>
                   <div class="field">
                     <div class="control">
-                      <input class="input is-large" type="email" placeholder="Your Email" autofocus="">
+                      <input v-model="user.email" class="input is-large" type="email" placeholder="Your Email" autofocus="">
                     </div>
                   </div>
                   <div class="field">
                     <div class="control">
-                      <input class="input is-large" type="username" placeholder="Your Username">
+                      <input v-model="user.username" class="input is-large" type="username" placeholder="Your Username">
                     </div>
                   </div>
                   <div class="field">
                     <div class="control">
-                      <input class="input is-large" type="password" placeholder="Your Password">
+                      <input v-model="user.password" class="input is-large" type="password" placeholder="Your Password">
                     </div>
                   </div>
                   <div class="field">
