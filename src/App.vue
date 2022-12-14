@@ -1,4 +1,4 @@
-<script >
+<script>
 
 import {defineComponent} from "vue";
 import HomePage from "./views/HomePage/HomePage.vue";
@@ -18,25 +18,24 @@ export default defineComponent({
 
 
 
+  <div class="bg-img">
+    <header>
+      <Navbar></Navbar>
+    </header>
 
-    <div class="bg-img">
-  <header>
-  <Navbar></Navbar>
-  </header>
+    <main class="ml-4">
+      <router-view></router-view>
+    </main>
 
-  <main class="ml-4">
-    <router-view></router-view>
-  </main>
-
-<!--  <HomePage></HomePage>-->
-  <Footer></Footer>
+    <!--  <HomePage></HomePage>-->
+    <Footer></Footer>
   </div>
 </template>
 
-<style >
+<style>
 
 
-#color{
+#color {
   background-color: yellow;
 
 }
@@ -50,6 +49,7 @@ export default defineComponent({
   background-color: #071e36;
 
 }
+
 html, body {
   height: 100vh;
 }
