@@ -76,30 +76,30 @@ export default defineComponent({
               <h3 class="title has-text-white">Sign Up</h3>
               <hr class="login-hr" id="color">
               <p class="subtitle has-text-white">Please sign up to proceed.</p>
-              <div class="box">
+              <div class="box" id="DarkBlue">
                 <figure class="avatar">
-                  <img src="../../assets/mkaf.png">
+                  <img src="../../assets/mkafnobg.png" >
                 </figure>
                 <form>
                   <div class="field">
                     <div class="control">
-                      <input v-model="user.email" class="input is-large" type="email" placeholder="Your Email" autofocus="">
+                      <input id="NavbarBlue" v-model="user.email" class="input is-large" type="email" placeholder="Your Email" autofocus="">
                     </div>
                   </div>
                   <div class="field">
                     <div class="control">
-                      <input v-model="user.username" class="input is-large" type="username" placeholder="Your Username">
+                      <input id="NavbarBlue" v-model="user.username" class="input is-large" type="username" placeholder="Your Username">
                     </div>
                   </div>
                   <div class="field">
                     <div class="control">
-                      <input v-model="user.password" class="input is-large" type="password" placeholder="Your Password">
+                      <input id="NavbarBlue" v-model="user.password" class="input is-large" type="password" placeholder="Your Password">
                     </div>
                   </div>
                   <div class="field">
 
                   </div>
-                  <button @click="getApi" id="Button" class="button is-block is-info is-large is-fullwidth">Submit <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                  <button @click="getApi" id="DarkBlue" class="button is-block is-info is-large is-fullwidth">Submit <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
                 </form>
               </div>
               <p class="has-text-grey">
@@ -121,6 +121,9 @@ export default defineComponent({
 
 <style scoped>
 
-
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  /*color: black;*/
+  opacity: 1; /* Firefox */
+}
 
 </style>
