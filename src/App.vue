@@ -54,6 +54,7 @@ html, body {
 h1 {
   color: white;
 }
+
 #DarkBlue {
   background-color: #041221;
 }
