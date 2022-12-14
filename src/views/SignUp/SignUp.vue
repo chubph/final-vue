@@ -2,8 +2,48 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "SignUp"
+  name: "SignUp",
+  data() {
+    return {
+      users : [ {
+        username: "",
+        password: "",
+        email: "",
+      }]
+    }
+  },
+
+  methods: {
+    getApi: function()  {
+
+      fetch("http://localhost:8080/api/users", {
+        method: 'POST',
+        body: JSON.stringify({
+          username: this.user.username,
+          password: this.user.password,
+          email: this.user.email
+        }),
+      })
+          .then((response) => response.json());
+    }
+  }
 });
+
+
+
+// fetch("http://localhost:8080/api/users", {
+//   method: 'POST',
+//   body: JSON.stringify({
+//     username: "this.username",
+//     password: "this.password",
+//     email: "this.email"
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+//     .then((response) => response.json());
+// });
 </script>
 
 <template>
@@ -37,7 +77,7 @@ export default defineComponent({
                   </div>
                   <div class="field">
                     <div class="control">
-                      <input class="input is-large" type="password" placeholder="Your Username">
+                      <input class="input is-large" type="username" placeholder="Your Username">
                     </div>
                   </div>
                   <div class="field">
@@ -48,7 +88,7 @@ export default defineComponent({
                   <div class="field">
 
                   </div>
-                  <button id="Button" class="button is-block is-info is-large is-fullwidth">Submit <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                  <button @click="getApi" id="Button" class="button is-block is-info is-large is-fullwidth">Submit <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
                 </form>
               </div>
               <p class="has-text-grey">
