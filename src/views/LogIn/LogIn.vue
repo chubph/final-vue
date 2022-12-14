@@ -23,20 +23,20 @@ export default defineComponent({
               <h3 class="title has-text-white">Login</h3>
               <hr class="login-hr" id="color">
               <p class="subtitle has-text-white">Please login to proceed.</p>
-              <div class="box">
+              <div class="box" id="DarkBlue">
                 <figure class="avatar">
-                  <img src="../../assets/mkaf.png">
+                  <img src="../../assets/mkafnobg.png">
                 </figure>
                 <form>
                   <div class="field">
                     <div class="control">
-                      <input class="input is-large" type="email" placeholder="Your Email" autofocus="">
+                      <input id="NavbarBlue" class="input is-large has-text-white-bis" type="email" placeholder="Your Email" autofocus="">
                     </div>
                   </div>
 
                   <div class="field">
                     <div class="control">
-                      <input class="input is-large" type="password" placeholder="Your Password">
+                      <input id="NavbarBlue" class="input is-large has-text-white-bis" type="password" placeholder="Your Password">
                     </div>
                   </div>
                   <div class="field">
@@ -45,11 +45,11 @@ export default defineComponent({
 <!--                      Remember me-->
 <!--                    </label>-->
                   </div>
-                  <button id="Button" class="button is-block is-info is-large is-fullwidth">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                  <button id="DarkBlue" class="button is-block is-info is-large is-fullwidth">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
                 </form>
               </div>
               <p class="has-text-grey">
-                <a id="signuplink" href="../#/signup">Sign Up</a> &nbsp;·&nbsp;
+                <a id="signuplink" href="../#/signup">Not a member? <br>Register here</a>
 <!--                <a href="../">Forgot Password</a> &nbsp;·&nbsp;-->
 <!--                <a href="../">Need Help?</a>-->
               </p>
