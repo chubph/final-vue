@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bulma": "^0.9.4",
+    "bulma-modal-fx": "^1.1.1",
     "font-awesome": "^4.7.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
