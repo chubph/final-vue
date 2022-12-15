@@ -13,6 +13,7 @@ export const useUserStore = defineStore("user", {
         setUser(user) {
             this.user=user
         }
-
     }
+
+
 })
