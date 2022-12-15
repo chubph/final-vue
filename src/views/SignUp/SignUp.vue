@@ -31,7 +31,7 @@ export default defineComponent({
       })
 
           .then((response) => response.json())
-          .then((message) => window.confirm("Welcome " + this.user.username + "!!!\nYou can now log in!!! 😎"))
+          .then((message) => window.alert("Welcome " + this.user.username + "!!!\nYou can now log in!!! 😎"))
         .then(function() {
           window.location = '/#/login'
         })

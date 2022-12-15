@@ -1,8 +1,11 @@
-<script>import { defineComponent } from "vue";
+<script>
+import { defineComponent } from "vue";
+import { useUserStore } from "@/stores/userStore";
 
 export default defineComponent({
   name: "LogIn",
-  data() {
+
+    data() {
     return {
       user: {
         username: "",
@@ -11,7 +14,14 @@ export default defineComponent({
       }
     };
   },
+
+  // setup() {
+  //   const userStore = useUserStore();
+  //   return { userStore };
+  // },
+
   methods: {
+
     changeNav() {
       if (this.isLoggedIn === false) {
         this.isLoggedIn = true;
@@ -20,33 +30,61 @@ export default defineComponent({
       }
       console.log(this.isLoggedIn);
     },
-    getApi2: function() {
-      const apiUrl2 = "http://localhost:8080/api/userbyusername";
-      const body2 = JSON.stringify({
-        username: this.user.username,
-        password: this.user.password
-      });
-      console.log(body2);
-      fetch(apiUrl2, {
-        method: "POST",
-        body: body2,
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
+    // getApi2: function() {
+    //   const apiUrl2 = "http://localhost:8080/api/userbyusername";
+    //   const body2 = JSON.stringify({
+    //     username: this.user.username,
+    //     password: this.user.password
+    //   });
+    //   console.log(body2);
+    //   fetch(apiUrl2, {
+    //     method: "POST",
+    //     body: body2,
+    //     headers: {
+    //       "Content-type": "application/json; charset=UTF-8"
+    //     }
+    //   })
+    //
+    //     .then((response) => response.json())
+    //       .then((message) => window.confirm("Welcome " + this.user.username + "!!!\nYou are now logged in!!! 😎"))
+    //       .then(function() { window.location = '/#/';})
+    //       .catch(error => {
+    //       window.alert("User does not exist!");
+    //     });
+    //
+    // }
+    getApi2:async function(){
+        const apiUrl2 = "http://localhost:8080/api/userbyusername";
+        const body2 = JSON.stringify({
+          username: this.user.username,
+          password: this.user.password
+        });
+        console.log(body2);
+        const response = await fetch(apiUrl2, {
+              method: "POST",
+              body: body2,
+              headers: {
+                "Content-type": "application/json; charset=UTF-8"
+              }
+            });
+      const result = await response.json();
+      console.log(result)
+      const userStore = useUserStore();
+      console.log(userStore)
+      userStore.setUser(result);
+      window.alert("Welcome " + this.user.username + "!!!\nYou are now logged in!!! 😎")
+      this.$router.push({
+        path:"/"
       })
 
-        .then((response) => response.json())
-        .then((message) => window.confirm("Welcome " + this.user.username + "!!!\nYou are now logged in!!! 😎"))
-          .then(function() {
-            window.location = '/#/';
-          })
-        .catch(error => {
-          window.alert("User does not exist!");
-        });
+
+
 
     }
   }
 });
+
+
 </script>
 
 <template>

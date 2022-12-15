@@ -5,30 +5,47 @@ import HomePage from "./views/HomePage/HomePage.vue";
 import Navbar from "./components/Navbar/Navbar.vue";
 import Footer from "./components/Footer/Footer.vue";
 
+import { useUserStore } from "@/stores/userStore";
+
 export default defineComponent({
   components: {
     Footer,
     Navbar,
     HomePage
-  }
+
+  },
+  setup() {
+    const userStore = useUserStore();
+    return { userStore };
+  },
 })
 </script>
 
 <template>
 
+  <br/>
+  <br/>
+  <br/>
+  <br/>
 
+  <h2>Welcome , {{ userStore.user.username }}</h2>
 
   <div class="bg-img">
     <header>
       <Navbar></Navbar>
     </header>
 
+
+
     <main class="ml-4">
       <router-view></router-view>
     </main>
 
     <!--  <HomePage></HomePage>-->
-    <Footer></Footer>
+    <Footer>
+
+    </Footer>
+
   </div>
 </template>
 
