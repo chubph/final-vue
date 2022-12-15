@@ -74,7 +74,7 @@ export default defineComponent({
                 <span class="icon">
                   <i class="fa fa-sign-out" aria-hidden="true"></i>
                 </span>
-                <router-link :to="{ name: 'homepage' }" class="navbar-item">Log Out</router-link>
+                <router-link :to="{ name: 'homepage' }" class="navbar-item" @click="changeNav">Log Out</router-link>
               </span>
           </div>
 
