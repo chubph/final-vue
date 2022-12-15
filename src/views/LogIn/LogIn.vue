@@ -15,10 +15,10 @@ export default defineComponent({
     };
   },
 
-  // setup() {
-  //   const userStore = useUserStore();
-  //   return { userStore };
-  // },
+  setup() {
+    const userStore = useUserStore();
+    return { userStore };
+  },
 
   methods: {
 
@@ -76,6 +76,7 @@ export default defineComponent({
       this.$router.push({
         path:"/"
       })
+      userStore.changeNav();
 
 
 

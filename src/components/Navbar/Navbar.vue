@@ -1,23 +1,27 @@
 <script>import {defineComponent} from "vue";
+import { useUserStore } from "@/stores/userStore";
 
 export default defineComponent({
   name: "Navbar",
+  setup() {
+    const userStore = useUserStore();
+    return { userStore };
+  },
   data() {
     return {
       test: false,
-      // visible: "is-hidden",
       username: "Philip"
     };
   },
   methods: {
-    changeNav() {
-      if (this.test === false) {
-        this.test = true;
-      } else {
-        this.test = false;
-      }
-      console.log(this.test);
-    }
+    // changeNav() {
+    //   if (this.test === false) {
+    //     this.test = true;
+    //   } else {
+    //     this.test = false;
+    //   }
+    //   console.log(this.test);
+    // }
   }
 });
 </script>
@@ -32,7 +36,7 @@ export default defineComponent({
           <router-link :to="{ name: 'homepage' }" class="navbar-item">Home</router-link>
         </strong>
       </a>
-      <button @click="changeNav">Test</button>
+<!--      <button @click="userStore.changeNav()">Test</button>-->
     </div>
 
     <div class="navbar-end">
@@ -43,7 +47,7 @@ export default defineComponent({
           <!--          HIDE SIGN LOG BUTTONS WHEN LOGGED IN-->
 
           <!--          SIGN UP BUTTON        -->
-          <div class="navbar-item is-hoverable" v-if="test === false">
+          <div class="navbar-item is-hoverable" v-if="userStore.test === false">
               <span class="icon-text">
                 <span class="icon">
                   <i class="fa fa-user-plus" aria-hidden="true"></i>
@@ -53,7 +57,7 @@ export default defineComponent({
           </div>
 
           <!--          LOG IN BUTTON        -->
-          <div class="navbar-item is-hoverable" v-if="test === false">
+          <div class="navbar-item is-hoverable" v-if="userStore.test === false">
               <span class="icon-text">
                 <span class="icon">
                   <i class="fa fa-sign-in" aria-hidden="true"></i>
@@ -65,16 +69,16 @@ export default defineComponent({
 
           <!--          USER APPEARS WHEN LOGGED IN-->
           <!--         HELLO USER      -->
-          <div class="navbar-item is-hoverable" v-if="test === true">
-            <h1>Hello {{ username }}</h1>
+          <div class="navbar-item is-hoverable" v-if="userStore.test === true">
+            <h1>Hello {{ userStore.user.username }}</h1>
           </div>
 
-          <div class="navbar-item is-hoverable" v-if="test === true">
+          <div class="navbar-item is-hoverable" v-if="userStore.test === true">
               <span class="icon-text">
                 <span class="icon">
                   <i class="fa fa-sign-out" aria-hidden="true"></i>
                 </span>
-                <router-link :to="{ name: 'homepage' }" class="navbar-item" @click="changeNav">Log Out</router-link>
+                <router-link :to="{ name: 'homepage' }" class="navbar-item" @click="userStore.changeNav()">Log Out</router-link>
               </span>
           </div>
 

@@ -23,12 +23,12 @@ export default defineComponent({
 
 <template>
 
-  <br/>
-  <br/>
-  <br/>
-  <br/>
+<!--  <br/>-->
+<!--  <br/>-->
+<!--  <br/>-->
+<!--  <br/>-->
 
-  <h2>Welcome , {{ userStore.user.username }}</h2>
+<!--  <h2>Welcome , {{ userStore.user.username }}</h2>-->
 
   <div class="bg-img">
     <header>
