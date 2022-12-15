@@ -32,7 +32,10 @@ export default defineComponent({
 
           .then((response) => response.json())
           .then((message) => window.confirm("Welcome " + this.user.username + "!!!\nYou can now log in!!! 😎"))
-          .catch(error => {
+        .then(function() {
+          window.location = '/#/login'
+        })
+      .catch(error => {
             window.alert("User already exists try another username!")
           })
 
@@ -99,7 +102,7 @@ export default defineComponent({
                   <div class="field">
 
                   </div>
-                  <button @click="getApi" id="DarkBlue" class="button is-block is-info is-large is-fullwidth">Submit <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                  <button @click="getApi"  id="DarkBlue" class="button is-block is-info is-large is-fullwidth" >Submit <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
                 </form>
               </div>
               <p class="has-text-grey">
