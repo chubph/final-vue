@@ -1,4 +1,4 @@
-<script>import { defineComponent } from "vue";
+<script>import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "Navbar",
@@ -24,28 +24,61 @@ export default defineComponent({
 
 
 <template>
-  <nav class="navbar is-focused is-fixed-top" role="navigation" aria-label="main navigation">
-    <!--    <div class="navbar-brand">--><!--      <a class="navbar-item" href="../#/">-->
-    <!--        <figure class="image">--><!--          <img src="../../assets/mkaf.png">--><!--        </figure>-->
-    <!--      </a>--><!--    </div>-->
-    <div class="navbar-start"><a class="navbar-item" href="../#/"> <strong>
-      <router-link :to="{ name: 'homepage' }" class="navbar-item">Home</router-link>
-    </strong> </a></div>
-    <button @click="changeNav">Test</button>
+  <nav class="navbar is-focused is-fixed-top" role="navigation" aria-label="main navigation" id="DarkBlue">
+
+    <div class="navbar-start">
+      <a class="navbar-item" href="../#/">
+        <strong>
+          <router-link :to="{ name: 'homepage' }" class="navbar-item">Home</router-link>
+        </strong>
+      </a>
+      <button @click="changeNav">Test</button>
+    </div>
+
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons"><span v-if="test === false">          <div
-          class="navbar-item is-hoverable">            <span class="icon-text">                <span class="icon">                  <i
-          class="fa fa-user-plus" aria-hidden="true"></i>                </span>            <span><router-link
-          :to="{ name: 'signup' }" class="navbar-item">Sign Up</router-link></span>            </span>          </div>          <div
-          class="navbar-item is-hoverable">            <span class="icon-text">                <span class="icon">                  <i
-          class="fa fa-sign-in" aria-hidden="true"></i>                </span>            <router-link
-          :to="{ name: 'login' }" class="navbar-item">Log In</router-link>            </span>          </div>          </span>
-          <span v-if="test === true">          <div
-            class="navbar-item is-hoverable">           <h1>Hello {{ username }}</h1>          </div>            <div
-            class="navbar-item is-hoverable">            <span class="icon-text">                <span class="icon">                  <i
-            class="fa fa-sign-out" aria-hidden="true"></i>                </span>              <span><button
-            @click="changeNav">Sign out</button></span>            </span>          </div>          </span></div>
+        <div class="buttons">
+
+
+          <!--          HIDE SIGN LOG BUTTONS WHEN LOGGED IN-->
+
+          <!--          SIGN UP BUTTON        -->
+          <div class="navbar-item is-hoverable" v-if="test === false">
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fa fa-user-plus" aria-hidden="true"></i>
+                </span>
+                <router-link :to="{ name: 'signup' }" class="navbar-item">Sign Up</router-link>
+              </span>
+          </div>
+
+          <!--          LOG IN BUTTON        -->
+          <div class="navbar-item is-hoverable" v-if="test === false">
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fa fa-sign-in" aria-hidden="true"></i>
+                </span>
+                <router-link :to="{ name: 'login' }" class="navbar-item">Log In</router-link>
+              </span>
+          </div>
+
+
+          <!--          USER APPEARS WHEN LOGGED IN-->
+          <!--         HELLO USER      -->
+          <div class="navbar-item is-hoverable" v-if="test === true">
+            <h1>Hello {{ username }}</h1>
+          </div>
+
+          <div class="navbar-item is-hoverable" v-if="test === true">
+              <span class="icon-text">
+                <span class="icon">
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </span>
+                <router-link :to="{ name: 'homepage' }" class="navbar-item">Log Out</router-link>
+              </span>
+          </div>
+
+        </div>
       </div>
     </div>
   </nav>
