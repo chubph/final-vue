@@ -37,12 +37,12 @@ export default defineComponent({
 
         .then((response) => response.json())
         .then((message) => window.confirm("Welcome " + this.user.username + "!!!\nYou are now logged in!!! 😎"))
+          .then(function() {
+            window.location = '/#/';
+          })
         .catch(error => {
           window.alert("User does not exist!");
         });
-      // // .then(function() {
-      // //   window.location = '/#/';
-      // });
     }
   }
 });
