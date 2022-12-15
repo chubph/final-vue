@@ -43,6 +43,7 @@ export default defineComponent({
         .catch(error => {
           window.alert("User does not exist!");
         });
+
     }
   }
 });
