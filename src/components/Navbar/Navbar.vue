@@ -7,22 +7,6 @@ export default defineComponent({
     const userStore = useUserStore();
     return { userStore };
   },
-  data() {
-    return {
-      test: false,
-      username: "Philip"
-    };
-  },
-  methods: {
-    // changeNav() {
-    //   if (this.test === false) {
-    //     this.test = true;
-    //   } else {
-    //     this.test = false;
-    //   }
-    //   console.log(this.test);
-    // }
-  }
 });
 </script>
 
@@ -36,7 +20,6 @@ export default defineComponent({
           <router-link :to="{ name: 'homepage' }" class="navbar-item">Home</router-link>
         </strong>
       </a>
-<!--      <button @click="userStore.changeNav()">Test</button>-->
     </div>
 
     <div class="navbar-end">
