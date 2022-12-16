@@ -1,4 +1,6 @@
-<script>import {defineComponent} from "vue";
+<script>
+
+import {defineComponent} from "vue";
 import { useUserStore } from "@/stores/userStore";
 
 export default defineComponent({

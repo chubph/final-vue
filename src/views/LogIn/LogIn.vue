@@ -32,15 +32,15 @@ export default defineComponent({
     },
 
     getApi2:async function(){
-        const apiUrl2 = "http://localhost:8080/api/userbyusername";
-        const body2 = JSON.stringify({
+        const apiUrlLogin = "http://localhost:8080/api/userbyusername";
+        const bodyLogin = JSON.stringify({
           username: this.user.username,
           password: this.user.password
         });
-        console.log(body2);
-        const response = await fetch(apiUrl2, {
+        console.log(bodyLogin);
+        const response = await fetch(apiUrlLogin, {
               method: "POST",
-              body: body2,
+              body: bodyLogin,
               headers: {
                 "Content-type": "application/json; charset=UTF-8"
               }

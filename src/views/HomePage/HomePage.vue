@@ -1,8 +1,15 @@
 <script>
 import {defineComponent} from "vue";
+import {useUserStore} from "@/stores/userStore";
 
 export default defineComponent({
   name: "HomePage",
+
+  setup() {
+    const userStore = useUserStore();
+    return {userStore};
+    console.log(userStore)
+  },
 
   data() {
     return {
@@ -17,8 +24,34 @@ export default defineComponent({
         image: "",
         rating: "",
 
+      },
+
+      gameAdded: {
+        username: "",
+        gameId: ""
       }
 
+    }
+  },
+
+  methods: {
+    addGame: async function() {
+      const apiUrlAddGame = "http://localhost:8080/api/game";
+      const bodyAddGame = JSON.stringify({
+        username: "Filipp",
+        gameId: "5",
+      });
+
+      const response = await fetch(apiUrlAddGame, {
+        method: "POST",
+        body: bodyAddGame,
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      });
+
+      const result = await response.json();
+      console.log(result)
     }
   },
 
@@ -135,7 +168,8 @@ export default defineComponent({
                     <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">?</span>
                   </div>
                   <div>
-                  <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">Add</span>
+                   <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue"
+                         v-if="userStore.isLoggedIn === true" @click="addGame">Add</span>
                   </div>
                 </div>
 
@@ -165,6 +199,10 @@ export default defineComponent({
                                                                                           id="asteraki"></i> </strong></p>
                     <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">?</span>
                   </div>
+                  <div>
+                   <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue"
+                         v-if="userStore.isLoggedIn === true">Add</span>
+                  </div>
                 </div>
 
             </div>
@@ -192,6 +230,10 @@ export default defineComponent({
                                                                                           id="asteraki"></i> </strong></p>
                     <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">?</span>
                   </div>
+                  <div>
+                   <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue"
+                         v-if="userStore.isLoggedIn === true">Add</span>
+                  </div>
                 </div>
 
             </div>
@@ -218,6 +260,10 @@ export default defineComponent({
                     <p> <strong class="has-text-white-bis"> Rating: {{ game.rating }}  <i class="fa fa-star"
                                                                                           id="asteraki"></i> </strong></p>
                     <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">?</span>
+                  </div>
+                  <div>
+                   <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue"
+                         v-if="userStore.isLoggedIn === true">Add</span>
                   </div>
                 </div>
 
