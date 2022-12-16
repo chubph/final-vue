@@ -1,6 +1,8 @@
 import LogIn from '../views/LogIn/LogIn.vue';
 import SignUp from "../views/SignUp/SignUp.vue";
 import HomePage from "@/views/HomePage/HomePage.vue";
+import UserProfile from "@/views/UserProfile/UserProfile.vue";
+
 
 export const routes = [
     {
@@ -15,7 +17,13 @@ export const routes = [
     },
     {
         name: 'homepage',
-        path: '/',
+        path: '/homepage',
+        alias: '/',
         component: HomePage,
+    },
+    {
+        name: 'userprofile',
+        path: '/userprofile',
+        component: UserProfile,
     },
 ];

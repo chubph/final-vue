@@ -4,7 +4,7 @@ export const useUserStore = defineStore("user", {
     state: () => {
         return {
             user: {},
-            test: false,
+            isLoggedIn: false,
         }
     },
 
@@ -13,13 +13,15 @@ export const useUserStore = defineStore("user", {
             this.user=user
         },
         changeNav() {
-            if (this.test === false) {
-                this.test = true;
+            if (this.isLoggedIn === false) {
+                this.isLoggedIn = true;
             } else {
-                this.test = false;
+                this.isLoggedIn = false;
+                this.user={}
             }
-            console.log(this.test);
-        }
+            console.log(this.isLoggedIn);
+        },
+
     }
 
 

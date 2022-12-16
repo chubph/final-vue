@@ -20,17 +20,22 @@ export default defineComponent({
           <router-link :to="{ name: 'homepage' }" class="navbar-item">Home</router-link>
         </strong>
       </a>
+      <a class="navbar-item" href="../#/userprofile " v-if="userStore.isLoggedIn === true">
+        <strong>
+          <router-link :to="{ name: 'userprofile' }" class="navbar-item">Profile</router-link>
+        </strong>
+      </a>
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-
+          <!--            USER PROFILE BUTTON-->
 
           <!--          HIDE SIGN LOG BUTTONS WHEN LOGGED IN-->
 
           <!--          SIGN UP BUTTON        -->
-          <div class="navbar-item is-hoverable" v-if="userStore.test === false">
+          <div class="navbar-item is-hoverable" v-if="userStore.isLoggedIn === false">
               <span class="icon-text">
                 <span class="icon">
                   <i class="fa fa-user-plus" aria-hidden="true"></i>
@@ -40,7 +45,7 @@ export default defineComponent({
           </div>
 
           <!--          LOG IN BUTTON        -->
-          <div class="navbar-item is-hoverable" v-if="userStore.test === false">
+          <div class="navbar-item is-hoverable" v-if="userStore.isLoggedIn === false">
               <span class="icon-text">
                 <span class="icon">
                   <i class="fa fa-sign-in" aria-hidden="true"></i>
@@ -52,11 +57,11 @@ export default defineComponent({
 
           <!--          USER APPEARS WHEN LOGGED IN-->
           <!--         HELLO USER      -->
-          <div class="navbar-item is-hoverable" v-if="userStore.test === true">
+          <div class="navbar-item is-hoverable" v-if="userStore.isLoggedIn === true">
             <h1>Hello {{ userStore.user.username }}</h1>
           </div>
-
-          <div class="navbar-item is-hoverable" v-if="userStore.test === true">
+                  <!--SIGN OUT BUTTON-->
+          <div class="navbar-item is-hoverable" v-if="userStore.isLoggedIn === true">
               <span class="icon-text">
                 <span class="icon">
                   <i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -64,6 +69,8 @@ export default defineComponent({
                 <router-link :to="{ name: 'homepage' }" class="navbar-item" @click="userStore.changeNav()">Log Out</router-link>
               </span>
           </div>
+<!--            USER PROFILE BUTTON-->
+
 
         </div>
       </div>
