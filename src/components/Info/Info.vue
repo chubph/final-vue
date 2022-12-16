@@ -28,5 +28,7 @@ export default defineComponent( {
 
 
 <style scoped>
-
+h1 {
+  color: #041221;
+}
 </style>
