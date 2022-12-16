@@ -333,8 +333,9 @@ export default defineComponent({
     <div class="modal-background"></div>
     <div class="modal-content">
       <div class="box">
-        <p>Info</p>
         <Info :game="chosenGame"></Info>
+
+        <p>Info:</p>
       </div>
     </div>
     <button class="modal-close is-large" aria-label="close">Close</button>
