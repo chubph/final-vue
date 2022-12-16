@@ -44,20 +44,6 @@ export default defineComponent({
 });
 
 
-
-// fetch("http://localhost:8080/api/users", {
-//   method: 'POST',
-//   body: JSON.stringify({
-//     username: "this.username",
-//     password: "this.password",
-//     email: "this.email"
-//   }),
-//   headers: {
-//     'Content-type': 'application/json; charset=UTF-8',
-//   },
-// })
-//     .then((response) => response.json());
-// });
 </script>
 
 <template>

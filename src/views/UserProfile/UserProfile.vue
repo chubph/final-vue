@@ -13,7 +13,7 @@ export default defineComponent({
 </script>
 
 <template>
-
+  <div class='container hero is-fullheight'></div>
 </template>
 
 
