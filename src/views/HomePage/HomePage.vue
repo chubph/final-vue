@@ -28,7 +28,7 @@ export default defineComponent({
 
       gameAdded: {
         username: "",
-        gameId: ""
+        gameid: ""
       }
 
     }
@@ -38,8 +38,8 @@ export default defineComponent({
     addGame: async function() {
       const apiUrlAddGame = "http://localhost:8080/api/game";
       const bodyAddGame = JSON.stringify({
-        username: "Filipp",
-        gameId: "5",
+        username: "Konnie",
+        gameid: "5",
       });
 
       const response = await fetch(apiUrlAddGame, {
