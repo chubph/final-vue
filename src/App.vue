@@ -1,6 +1,6 @@
 <script>
 
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 import HomePage from "./views/HomePage/HomePage.vue";
 import Navbar from "./components/Navbar/Navbar.vue";
 import Footer from "./components/Footer/Footer.vue";
@@ -17,24 +17,25 @@ export default defineComponent({
   setup() {
     const userStore = useUserStore();
     return { userStore };
-  },
-})
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {  function openModal($el) {    $el.classList.add('is-active');  }  function closeModal($el) {    $el.classList.remove('is-active');  }  function closeAllModals() {    (document.querySelectorAll('.modal') || []).forEach(($modal) => {      closeModal($modal);    });  }  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {    const $target = $close.closest('.modal');    $close.addEventListener('click', () => {      closeModal($target);    });  });    document.addEventListener('keydown', (event) => {    const e = event || window.event;    if (e.keyCode === 27) {     closeAllModals();   }  });  });
 </script>
 
 <template>
 
-<!--  <br/>-->
-<!--  <br/>-->
-<!--  <br/>-->
-<!--  <br/>-->
+  <!--  <br/>-->
+  <!--  <br/>-->
+  <!--  <br/>-->
+  <!--  <br/>-->
 
-<!--  <h2>Welcome , {{ userStore.user.username }}</h2>-->
+  <!--  <h2>Welcome , {{ userStore.user.username }}</h2>-->
 
   <div class="bg-img">
     <header>
       <Navbar></Navbar>
     </header>
-
 
 
     <main class="ml-4">

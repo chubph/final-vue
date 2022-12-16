@@ -16,7 +16,6 @@ export default defineComponent({
   data() {
     return {
       chosenGame:{
-      name: this.name
       },
       games: [],
       games2: [],
@@ -43,6 +42,7 @@ export default defineComponent({
     handleInfoClick(game){
       console.log(game)
       this.chosenGame=game
+      console.log(this.chosenGame)
       this.handleByClick(event)
     },
     addGame: async function(event) {
@@ -179,7 +179,7 @@ export default defineComponent({
                     <h4 class="has-text-white-bis">{{ game.name }}</h4>
                     <p> <strong class="has-text-white-bis"> Rating: {{ game.rating }}
                       <i class="fa fa-star" id="asteraki"></i> </strong></p>
-                    <span class="js-modal-trigger button is-link modal-button"  data-target="modal-js-example" @click="handleInfoClick(game)" id="DarkBlue">Info</span>
+                    <span class="js-modal-trigger button is-link modal-button" data-target="modal-js-example" @click="handleInfoClick(game)" id="DarkBlue">Info</span>
                   </div>
                   <div>
                    <span class="button is-link modal-button" data-target="modal-image2" :data-gameid="game.id" id="DarkBlue"
@@ -293,14 +293,15 @@ export default defineComponent({
     </header>
   </div>
 
-  <div id = "modal-js-example" class="modal">
+  <div id="modal-js-example" class="modal">
     <div class="modal-background"></div>
+    <div class="modal-content">
     <div class="box">
       <p>Info</p>
       <Info :game="chosenGame"></Info>
-
     </div>
-<button class="modal-close is-large" aria-label="close">Something</button>
+    </div>
+<button class="modal-close is-large" aria-label="close">Close</button>
   </div>
 </template>
 
