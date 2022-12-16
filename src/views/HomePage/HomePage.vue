@@ -134,6 +134,9 @@ export default defineComponent({
                       <i class="fa fa-star" id="asteraki"></i> </strong></p>
                     <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">?</span>
                   </div>
+                  <div>
+                  <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">Add</span>
+                  </div>
                 </div>
 
             </div>
