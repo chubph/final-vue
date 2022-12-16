@@ -38,23 +38,48 @@ export default defineComponent({
           password: this.user.password
         });
         console.log(bodyLogin);
+
+      try {
         const response = await fetch(apiUrlLogin, {
-              method: "POST",
-              body: bodyLogin,
-              headers: {
-                "Content-type": "application/json; charset=UTF-8"
-              }
-            });
-      const result = await response.json();
-      console.log(result)
-      const userStore = useUserStore();
-      console.log(userStore)
-      userStore.setUser(result);
-      window.alert("Welcome " + this.user.username + "!!!\nYou are now logged in!!! 😎")
-      this.$router.push({
-        path:"/"
-      })
-      userStore.changeNav();
+          method: "POST",
+          body: bodyLogin,
+          headers: {
+            "Content-type": "application/json; charset=UTF-8"
+          }
+        });
+        const result = await response.json();
+
+        console.log(result)
+        const userStore = useUserStore();
+        console.log(userStore)
+        userStore.setUser(result);
+        window.alert("Welcome " + this.user.username + "!!!\nYou are now logged in!!! 😎")
+        this.$router.push({
+          path:"/"
+        })
+        userStore.changeNav();
+
+      } catch (error) {
+        alert("User not found!!! Try again!!!")
+      }
+      //   const response = await fetch(apiUrlLogin, {
+      //         method: "POST",
+      //         body: bodyLogin,
+      //         headers: {
+      //           "Content-type": "application/json; charset=UTF-8"
+      //         }
+      //       });
+      // const result = await response.json();
+      //
+      // console.log(result)
+      // const userStore = useUserStore();
+      // console.log(userStore)
+      // userStore.setUser(result);
+      // window.alert("Welcome " + this.user.username + "!!!\nYou are now logged in!!! 😎")
+      // this.$router.push({
+      //   path:"/"
+      // })
+      // userStore.changeNav();
 
 
 

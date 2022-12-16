@@ -8,7 +8,7 @@ export default defineComponent({
   setup() {
     const userStore = useUserStore();
     return {userStore};
-    console.log(userStore)
+
   },
 
   data() {
@@ -26,20 +26,18 @@ export default defineComponent({
 
       },
 
-      gameAdded: {
-        username: "",
-        gameid: ""
-      }
-
     }
   },
 
   methods: {
-    addGame: async function() {
+    addGame: async function(event) {
+      // console.log(event)
+      // console.log(event.target.dataset.gameid)
+      console.log(this.userStore.user.username)
       const apiUrlAddGame = "http://localhost:8080/api/game";
       const bodyAddGame = JSON.stringify({
-        username: "Konnie",
-        gameid: "5",
+        username: this.userStore.user.username,
+        gameid: event.target.dataset.gameid,
       });
 
       const response = await fetch(apiUrlAddGame, {
@@ -52,6 +50,7 @@ export default defineComponent({
 
       const result = await response.json();
       console.log(result)
+      alert("Game added successfully!!!")
     }
   },
 
@@ -168,7 +167,7 @@ export default defineComponent({
                     <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">?</span>
                   </div>
                   <div>
-                   <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue"
+                   <span class="button is-link modal-button" data-target="modal-image2" :data-gameid="game.id" id="DarkBlue"
                          v-if="userStore.isLoggedIn === true" @click="addGame">Add</span>
                   </div>
                 </div>
@@ -200,8 +199,8 @@ export default defineComponent({
                     <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">?</span>
                   </div>
                   <div>
-                   <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue"
-                         v-if="userStore.isLoggedIn === true">Add</span>
+                   <span class="button is-link modal-button" data-target="modal-image2" :data-gameid="game.id" id="DarkBlue"
+                         v-if="userStore.isLoggedIn === true" @click="addGame">Add</span>
                   </div>
                 </div>
 
@@ -231,8 +230,8 @@ export default defineComponent({
                     <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">?</span>
                   </div>
                   <div>
-                   <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue"
-                         v-if="userStore.isLoggedIn === true">Add</span>
+                   <span class="button is-link modal-button" data-target="modal-image2" :data-gameid="game.id" id="DarkBlue"
+                         v-if="userStore.isLoggedIn === true" @click="addGame">Add</span>
                   </div>
                 </div>
 
@@ -262,8 +261,8 @@ export default defineComponent({
                     <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">?</span>
                   </div>
                   <div>
-                   <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue"
-                         v-if="userStore.isLoggedIn === true">Add</span>
+                   <span class="button is-link modal-button" data-target="modal-image2" :data-gameid="game.id" id="DarkBlue"
+                         v-if="userStore.isLoggedIn === true" @click="addGame">Add</span>
                   </div>
                 </div>
 
