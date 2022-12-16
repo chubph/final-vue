@@ -170,7 +170,7 @@ export default defineComponent({
                       <i class="fa fa-star" id="asteraki"></i>
                       </strong>
                     </p>
-                    <span class="js-modal-trigger button is-link modal-button"
+                    <span class="js-modal-trigger button is-link modal-button fa fa-info"
                           data-target="modal-js-example"
                           @click="handleInfoClick(game)"
                           id="DarkBlue">
@@ -178,7 +178,7 @@ export default defineComponent({
                     </span>
                   </div>
                   <div>
-                   <span class="button is-link modal-button"
+                   <span class="button is-link modal-button fa fa-plus"
                          data-target="modal-image2"
                          :data-gameid="game.id"
                          id="DarkBlue"
@@ -214,7 +214,7 @@ export default defineComponent({
                       <i class="fa fa-star" id="asteraki"></i>
                       </strong>
                     </p>
-                    <span class="js-modal-trigger button is-link modal-button"
+                    <span class="js-modal-trigger button is-link modal-button fa fa-info "
                           data-target="modal-js-example"
                           @click="handleInfoClick(game)"
                           id="DarkBlue">
@@ -222,7 +222,7 @@ export default defineComponent({
                     </span>
                   </div>
                   <div>
-                   <span class="button is-link modal-button"
+                   <span class="button is-link modal-button fa fa-plus"
                          data-target="modal-image2"
                          :data-gameid="game.id"
                          id="DarkBlue"
@@ -258,7 +258,7 @@ export default defineComponent({
                       <i class="fa fa-star" id="asteraki"></i>
                       </strong>
                     </p>
-                    <span class="js-modal-trigger button is-link modal-button"
+                    <span class="js-modal-trigger button is-link modal-button fa fa-info"
                           data-target="modal-js-example"
                           @click="handleInfoClick(game)"
                           id="DarkBlue">
@@ -266,7 +266,7 @@ export default defineComponent({
                     </span>
                   </div>
                   <div>
-                   <span class="button is-link modal-button"
+                   <span class="button is-link modal-button fa fa-plus"
                          data-target="modal-image2"
                          :data-gameid="game.id"
                          id="DarkBlue"
@@ -302,7 +302,7 @@ export default defineComponent({
                       <i class="fa fa-star" id="asteraki"></i>
                       </strong>
                     </p>
-                    <span class="js-modal-trigger button is-link modal-button"
+                    <span class="js-modal-trigger button is-link modal-button fa fa-info"
                           data-target="modal-js-example"
                           @click="handleInfoClick(game)"
                           id="DarkBlue">
@@ -310,7 +310,7 @@ export default defineComponent({
                     </span>
                   </div>
                   <div>
-                   <span class="button is-link modal-button"
+                   <span class="button is-link modal-button fa fa-plus"
                          data-target="modal-image2"
                          :data-gameid="game.id"
                          id="DarkBlue"
