@@ -1,9 +1,11 @@
 <script>
 import {defineComponent} from "vue";
 import {useUserStore} from "@/stores/userStore";
+import Info from "@/components/Info/Info.vue";
 
 export default defineComponent({
   name: "HomePage",
+  components: { Info },
 
   setup() {
     const userStore = useUserStore();
@@ -13,6 +15,9 @@ export default defineComponent({
 
   data() {
     return {
+      chosenGame:{
+      name: this.name
+      },
       games: [],
       games2: [],
       games3: [],
@@ -30,6 +35,16 @@ export default defineComponent({
   },
 
   methods: {
+    handleByClick(event){
+      const modal = event.target.dataset.target
+      const $target = document.getElementById(modal)
+      $target.classList.add('is-active')
+    },
+    handleInfoClick(game){
+      console.log(game)
+      this.chosenGame=game
+      this.handleByClick(event)
+    },
     addGame: async function(event) {
       // console.log(event)
       // console.log(event.target.dataset.gameid)
@@ -164,7 +179,7 @@ export default defineComponent({
                     <h4 class="has-text-white-bis">{{ game.name }}</h4>
                     <p> <strong class="has-text-white-bis"> Rating: {{ game.rating }}
                       <i class="fa fa-star" id="asteraki"></i> </strong></p>
-                    <span class="button is-link modal-button" data-target="modal-image2" id="DarkBlue">?</span>
+                    <span class="js-modal-trigger button is-link modal-button"  data-target="modal-js-example" @click="handleInfoClick(game)" id="DarkBlue">Info</span>
                   </div>
                   <div>
                    <span class="button is-link modal-button" data-target="modal-image2" :data-gameid="game.id" id="DarkBlue"
@@ -276,6 +291,16 @@ export default defineComponent({
 
 
     </header>
+  </div>
+
+  <div id = "modal-js-example" class="modal">
+    <div class="modal-background"></div>
+    <div class="box">
+      <p>Info</p>
+      <Info :game="chosenGame"></Info>
+
+    </div>
+<button class="modal-close is-large" aria-label="close">Something</button>
   </div>
 </template>
 
