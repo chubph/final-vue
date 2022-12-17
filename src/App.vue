@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <style>
 
 
-#color {
+#colYellow {
   background-color: yellow;
 
 }
@@ -95,19 +95,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 }
 
-html, body {
-  height: 100vh;
-}
+/*html, body {*/
+/*  height: 100vh;*/
+/*}*/
 
-h1 {
-  color: white;
-}
+/*h1 {*/
+/*  color: white;*/
+/*}*/
 
 #DarkBlue {
   background-color: #041221;
 }
 
-#NavbarBlue {
+#LightBlue {
   background-color: #071e36;
 }
 

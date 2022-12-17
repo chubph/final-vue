@@ -99,18 +99,18 @@ export default defineComponent({
         <div class="hero-body">
           <div class="container has-text-centered">
             <div class="column is-4 is-offset-4"><h3 class="title has-text-white">Login</h3>
-              <hr class="login-hr" id="color">
+              <hr class="login-hr" id="colYellow">
               <p class="subtitle has-text-white">Please login to proceed.</p>
               <div class="box" id="DarkBlue">
                 <figure class="avatar"><img src="../../assets/mkafnobg.png"></figure>
                 <form>
                   <div class="field">
-                    <div class="control"><input id="NavbarBlue" v-model="user.username"
+                    <div class="control"><input id="LightBlue" v-model="user.username"
                                                 class="input is-large has-text-white-bis" type="username"
                                                 placeholder="Your Username" autofocus=""></div>
                   </div>
                   <div class="field">
-                    <div class="control"><input id="NavbarBlue" v-model="user.password"
+                    <div class="control"><input id="LightBlue" v-model="user.password"
                                                 class="input is-large has-text-white-bis" type="password"
                                                 placeholder="Your Password"></div>
                   </div>

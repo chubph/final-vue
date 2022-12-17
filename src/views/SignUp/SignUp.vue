@@ -63,7 +63,7 @@ export default defineComponent({
           <div class="container has-text-centered">
             <div class="column is-4 is-offset-4">
               <h3 class="title has-text-white">Sign Up</h3>
-              <hr class="login-hr" id="color">
+              <hr class="login-hr" id="colYellow">
               <p class="subtitle has-text-white">Please sign up to proceed.</p>
               <div class="box" id="DarkBlue">
                 <figure class="avatar">
@@ -72,17 +72,17 @@ export default defineComponent({
                 <form>
                   <div class="field">
                     <div class="control">
-                      <input id="NavbarBlue" v-model="user.email" class="input is-large" type="email" placeholder="Your Email" autofocus="">
+                      <input id="LightBlue" v-model="user.email" class="input is-large" type="email" placeholder="Your Email" autofocus="">
                     </div>
                   </div>
                   <div class="field">
                     <div class="control">
-                      <input id="NavbarBlue" v-model="user.username" class="input is-large" type="username" placeholder="Your Username">
+                      <input id="LightBlue" v-model="user.username" class="input is-large" type="username" placeholder="Your Username">
                     </div>
                   </div>
                   <div class="field">
                     <div class="control">
-                      <input id="NavbarBlue" v-model="user.password" class="input is-large" type="password" placeholder="Your Password">
+                      <input id="LightBlue" v-model="user.password" class="input is-large" type="password" placeholder="Your Password">
                     </div>
                   </div>
                   <div class="field">

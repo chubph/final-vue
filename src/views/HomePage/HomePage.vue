@@ -161,38 +161,43 @@ export default defineComponent({
                          data-target="modal-image2">
                   </figure>
                 </div>
-                <div class="card-content">
+
+
+                <div class="card-content is-halfheight" id="cardContent">
                   <div class="content" id="cardDetails">
+
                     <h4 class="has-text-white-bis">{{ game.name }}</h4>
+
                     <p>
                       <strong class="has-text-white-bis">
                       Rating: {{ game.rating }}
                       <i class="fa fa-star" id="asteraki"></i>
                       </strong>
                     </p>
-                    <span class="js-modal-trigger button is-link modal-button fa fa-info"
-                          data-target="modal-js-example"
-                          @click="handleInfoClick(game)"
-                          id="DarkBlue">
+
+
+                    <button class="js-modal-trigger button is-link modal-button fa fa-info"
+                            data-target="modal-js-example"
+                            @click="handleInfoClick(game)"
+                            id="DarkBlue">
                       Info
-                    </span>
-                  </div>
-                  <div>
-                   <span class="button is-link modal-button fa fa-plus"
-                         data-target="modal-image2"
-                         :data-gameid="game.id"
-                         id="DarkBlue"
-                         v-if="userStore.isLoggedIn === true"
-                         @click="addGame">
+                    </button>
+                    &nbsp
+                    <button class="button is-link modal-button fa fa-plus"
+                           data-target="modal-image2"
+                           :data-gameid="game.id"
+                           id="DarkBlue"
+                           v-if="userStore.isLoggedIn === false"
+                           @click="addGame">
                      Add
-                   </span>
+                    </button>
                   </div>
                 </div>
               </div>
             </span>
           </div>
 
-          <!--          COLUMN 2  -->
+          <!--          COLUMN 2 -->
           <div class="column is-3 ">
             <span v-for="game in games2">
               <br>
@@ -205,36 +210,42 @@ export default defineComponent({
                          data-target="modal-image2">
                   </figure>
                 </div>
-                <div class="card-content">
+
+
+                <div class="card-content is-halfheight" id="cardContent">
                   <div class="content" id="cardDetails">
+
                     <h4 class="has-text-white-bis">{{ game.name }}</h4>
+
                     <p>
                       <strong class="has-text-white-bis">
                       Rating: {{ game.rating }}
                       <i class="fa fa-star" id="asteraki"></i>
                       </strong>
                     </p>
-                    <span class="js-modal-trigger button is-link modal-button fa fa-info "
-                          data-target="modal-js-example"
-                          @click="handleInfoClick(game)"
-                          id="DarkBlue">
+
+
+                    <button class="js-modal-trigger button is-link modal-button fa fa-info"
+                            data-target="modal-js-example"
+                            @click="handleInfoClick(game)"
+                            id="DarkBlue">
                       Info
-                    </span>
-                  </div>
-                  <div>
-                   <span class="button is-link modal-button fa fa-plus"
-                         data-target="modal-image2"
-                         :data-gameid="game.id"
-                         id="DarkBlue"
-                         v-if="userStore.isLoggedIn === true"
-                         @click="addGame">
+                    </button>
+                    &nbsp
+                    <button class="button is-link modal-button fa fa-plus"
+                            data-target="modal-image2"
+                            :data-gameid="game.id"
+                            id="DarkBlue"
+                            v-if="userStore.isLoggedIn === false"
+                            @click="addGame">
                      Add
-                   </span>
+                    </button>
                   </div>
                 </div>
               </div>
             </span>
           </div>
+
 
           <!--          COLUMN 3  -->
           <div class="column is-3 ">
@@ -249,31 +260,36 @@ export default defineComponent({
                          data-target="modal-image2">
                   </figure>
                 </div>
-                <div class="card-content">
+
+
+                <div class="card-content is-halfheight" id="cardContent">
                   <div class="content" id="cardDetails">
+
                     <h4 class="has-text-white-bis">{{ game.name }}</h4>
+
                     <p>
                       <strong class="has-text-white-bis">
                       Rating: {{ game.rating }}
                       <i class="fa fa-star" id="asteraki"></i>
                       </strong>
                     </p>
-                    <span class="js-modal-trigger button is-link modal-button fa fa-info"
-                          data-target="modal-js-example"
-                          @click="handleInfoClick(game)"
-                          id="DarkBlue">
+
+
+                    <button class="js-modal-trigger button is-link modal-button fa fa-info"
+                            data-target="modal-js-example"
+                            @click="handleInfoClick(game)"
+                            id="DarkBlue">
                       Info
-                    </span>
-                  </div>
-                  <div>
-                   <span class="button is-link modal-button fa fa-plus"
-                         data-target="modal-image2"
-                         :data-gameid="game.id"
-                         id="DarkBlue"
-                         v-if="userStore.isLoggedIn === true"
-                         @click="addGame">
+                    </button>
+                    &nbsp
+                    <button class="button is-link modal-button fa fa-plus"
+                            data-target="modal-image2"
+                            :data-gameid="game.id"
+                            id="DarkBlue"
+                            v-if="userStore.isLoggedIn === false"
+                            @click="addGame">
                      Add
-                   </span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -293,37 +309,43 @@ export default defineComponent({
                          data-target="modal-image2">
                   </figure>
                 </div>
-                <div class="card-content">
+
+
+                <div class="card-content is-halfheight" id="cardContent">
                   <div class="content" id="cardDetails">
+
                     <h4 class="has-text-white-bis">{{ game.name }}</h4>
+
                     <p>
                       <strong class="has-text-white-bis">
                       Rating: {{ game.rating }}
                       <i class="fa fa-star" id="asteraki"></i>
                       </strong>
                     </p>
-                    <span class="js-modal-trigger button is-link modal-button fa fa-info"
-                          data-target="modal-js-example"
-                          @click="handleInfoClick(game)"
-                          id="DarkBlue">
+
+
+                    <button class="js-modal-trigger button is-link modal-button fa fa-info"
+                            data-target="modal-js-example"
+                            @click="handleInfoClick(game)"
+                            id="DarkBlue">
                       Info
-                    </span>
-                  </div>
-                  <div>
-                   <span class="button is-link modal-button fa fa-plus"
-                         data-target="modal-image2"
-                         :data-gameid="game.id"
-                         id="DarkBlue"
-                         v-if="userStore.isLoggedIn === true"
-                         @click="addGame">
+                    </button>
+                    &nbsp
+                    <button class="button is-link modal-button fa fa-plus"
+                            data-target="modal-image2"
+                            :data-gameid="game.id"
+                            id="DarkBlue"
+                            v-if="userStore.isLoggedIn === false"
+                            @click="addGame">
                      Add
-                   </span>
+                    </button>
                   </div>
                 </div>
               </div>
             </span>
           </div>
 
+<!--          END OF 4 COLUMNS-->
         </div>
       </section>
     </header>
@@ -377,6 +399,13 @@ h1 {
 
 #cardDetails {
 
+
 }
+
+#cardContent {
+
+
+}
+
 </style>
 
