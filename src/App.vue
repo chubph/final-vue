@@ -91,7 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #071e36;
+  background: rgb(7,30,54);
+  background: radial-gradient(circle, rgba(7,30,54,1) 35%, rgba(2,0,36,1) 100%, rgba(54,54,54,1) 100%);
 
 }
 
@@ -107,8 +108,30 @@ document.addEventListener("DOMContentLoaded", () => {
   background-color: #041221;
 }
 
+#LightBlueTextYellow {
+  background-color: #071e36;
+  color: #cdc50e;
+}
+
+#DarkBlueTextYellow {
+  background-color: #041221;
+  color: #cdc50e;
+}
+
 #LightBlue {
   background-color: #071e36;
+}
+
+#asteraki {
+  color: #cdc50e;
+}
+
+#cardCol {
+  /*background-color: #363636;*/
+  text-decoration-color: papayawhip;
+  background: rgb(4,18,33);
+  background: linear-gradient(310deg, rgba(4,18,33,1) 20%, rgba(54,54,54,1) 84%, rgba(33,39,45,1) 97%);
+
 }
 
 </style>

@@ -26,6 +26,7 @@ export default defineComponent({
         name: "",
         image: "",
         rating: "",
+        released: "",
       },
     }
   },
@@ -85,6 +86,7 @@ export default defineComponent({
       gameOne.name = gameList[i].name;
       gameOne.image = gameList[i].background_image;
       gameOne.rating = gameList[i].rating;
+      gameOne.released = gameList[i].released;
 
 
       if (i < 5) {
@@ -128,6 +130,7 @@ export default defineComponent({
       <br>
 
       <section class="hero  is-small" id="purpleCol">
+        <div id="shadow2">
         <div class="hero-body">
           <figure class="image" id="logo">
             <img src="../../assets/mkafnobg.png">
@@ -141,6 +144,7 @@ export default defineComponent({
             </p>
           </div>
         </div>
+        </div>
       </section>
       <br>
 
@@ -152,6 +156,7 @@ export default defineComponent({
           <div class="column is-3 ">
             <span v-for="game in games">
               <br>
+              <div id="shadow">
 
               <div class="card is-shady is-small" id="cardCol">
 
@@ -186,21 +191,23 @@ export default defineComponent({
                     <button class="button is-link modal-button fa fa-plus"
                            data-target="modal-image2"
                            :data-gameid="game.id"
-                           id="DarkBlue"
-                           v-if="userStore.isLoggedIn === false"
+                           id="DarkBlueTextYellow"
+                           v-if="userStore.isLoggedIn === true"
                            @click="addGame">
-                     Add
+                     Add to Library
                     </button>
                   </div>
                 </div>
               </div>
+                </div>
             </span>
           </div>
 
-          <!--          COLUMN 2 -->
+          <!--          COLUMN 2  -->
           <div class="column is-3 ">
             <span v-for="game in games2">
               <br>
+              <div id="shadow">
 
               <div class="card is-shady is-small" id="cardCol">
 
@@ -235,14 +242,15 @@ export default defineComponent({
                     <button class="button is-link modal-button fa fa-plus"
                             data-target="modal-image2"
                             :data-gameid="game.id"
-                            id="DarkBlue"
-                            v-if="userStore.isLoggedIn === false"
+                            id="DarkBlueTextYellow"
+                            v-if="userStore.isLoggedIn === true"
                             @click="addGame">
-                     Add
+                     Add to Library
                     </button>
                   </div>
                 </div>
               </div>
+                </div>
             </span>
           </div>
 
@@ -251,6 +259,7 @@ export default defineComponent({
           <div class="column is-3 ">
             <span v-for="game in games3">
               <br>
+              <div id="shadow">
 
               <div class="card is-shady is-small" id="cardCol">
 
@@ -285,14 +294,15 @@ export default defineComponent({
                     <button class="button is-link modal-button fa fa-plus"
                             data-target="modal-image2"
                             :data-gameid="game.id"
-                            id="DarkBlue"
-                            v-if="userStore.isLoggedIn === false"
+                            id="DarkBlueTextYellow"
+                            v-if="userStore.isLoggedIn === true"
                             @click="addGame">
-                     Add
+                     Add to Library
                     </button>
                   </div>
                 </div>
               </div>
+                </div>
             </span>
           </div>
 
@@ -300,6 +310,7 @@ export default defineComponent({
           <div class="column is-3 ">
             <span v-for="game in games4">
               <br>
+              <div id="shadow">
 
               <div class="card is-shady is-small" id="cardCol">
 
@@ -334,30 +345,28 @@ export default defineComponent({
                     <button class="button is-link modal-button fa fa-plus"
                             data-target="modal-image2"
                             :data-gameid="game.id"
-                            id="DarkBlue"
-                            v-if="userStore.isLoggedIn === false"
+                            id="DarkBlueTextYellow"
+                            v-if="userStore.isLoggedIn === true"
                             @click="addGame">
-                     Add
+                     Add to Library
                     </button>
                   </div>
                 </div>
               </div>
+                </div>
             </span>
           </div>
-
 <!--          END OF 4 COLUMNS-->
         </div>
       </section>
     </header>
   </div>
 
-  <div id="modal-js-example" class="modal">
+  <div id="modal-js-example" class="modal modal-fx-3dSlit">
     <div class="modal-background"></div>
     <div class="modal-content">
-      <div class="box">
+      <div class="box is-transparent" id="cardCol">
         <Info :game="chosenGame"></Info>
-
-        <p>Info:</p>
       </div>
     </div>
     <button class="modal-close is-large" aria-label="close">Close</button>
@@ -389,13 +398,14 @@ h1 {
 }
 
 #cardCol {
-  background-color: #363636;
+  /*background-color: #363636;*/
   text-decoration-color: papayawhip;
+  background: rgb(4,18,33);
+  background: linear-gradient(310deg, rgba(4,18,33,1) 20%, rgba(54,54,54,1) 84%, rgba(33,39,45,1) 97%);
+
 }
 
-#asteraki {
-  color: #cdc50e;
-}
+
 
 #cardDetails {
 
@@ -406,6 +416,15 @@ h1 {
 
 
 }
+
+#shadow {
+  box-shadow: 10px 0px 10px 5px rgba(0,0,0,.8);
+}
+
+#shadow2 {
+  box-shadow: 15px 15px 15px 8px rgba(0,0,0,.8);
+}
+
 
 </style>
 
