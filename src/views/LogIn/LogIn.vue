@@ -53,11 +53,15 @@ export default defineComponent({
         const userStore = useUserStore();
         console.log(userStore)
         userStore.setUser(result);
+        // localStorage.setItem("user", JSON.stringify(result));
+        // console.log(JSON.parse(localStorage.getItem("user")))
+
         window.alert("Welcome " + this.user.username + "!!!\nYou are now logged in!!! 😎")
         this.$router.push({
           path:"/"
         })
         userStore.changeNav();
+
 
       } catch (error) {
         alert("User not found!!! Try again!!!")

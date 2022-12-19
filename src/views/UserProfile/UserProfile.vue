@@ -13,10 +13,16 @@ export default defineComponent({
     return {
       games: {
 
+      },
+      user: {
+
       }
 
     }
 
+  },
+  mounted() {
+    this.user = JSON.parse(localStorage.getItem("user"))
   },
   methods: {
     getGameList:async function() {
@@ -47,8 +53,8 @@ export default defineComponent({
   <br/>
   <br/>
   <br/>
+  <h1>Hello {{ this.user.username}}</h1>
 
-  <p>Hello1</p>
   <br/>
   <button @click="getGameList">Game List</button>
   <br/>

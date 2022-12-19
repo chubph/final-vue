@@ -9,6 +9,17 @@ export default defineComponent({
     const userStore = useUserStore();
     return { userStore };
   },
+  data() {
+    return {
+      user: {
+
+      }
+    }
+  },
+  mounted() {
+    this.user = JSON.parse(localStorage.getItem("user"))
+  },
+
 });
 </script>
 
@@ -60,7 +71,7 @@ export default defineComponent({
           <!--          USER APPEARS WHEN LOGGED IN-->
           <!--         HELLO USER      -->
           <div class="navbar-item is-hoverable" v-if="userStore.isLoggedIn === true">
-            <h1>Hello {{ userStore.user.username }}</h1>
+            <h1>Hello {{ this.user.username}}</h1>
           </div>
                   <!--SIGN OUT BUTTON-->
           <div class="navbar-item is-hoverable" v-if="userStore.isLoggedIn === true">
