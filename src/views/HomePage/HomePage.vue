@@ -68,7 +68,6 @@ export default defineComponent({
       alert("Game added successfully!!!")
     }
   },
-
   async mounted() {
     const url = "https://api.rawg.io/api/games?key=2fe636237e6942a1afa7b7e75c21acc8";
     const response = await fetch(url);
