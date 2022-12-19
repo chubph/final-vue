@@ -12,7 +12,7 @@ export default defineComponent({
   data() {
     return {
       games: {
-        type: Array
+
       }
 
     }
