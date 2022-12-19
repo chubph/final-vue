@@ -55,7 +55,7 @@ export default defineComponent({
   <br/>
   <table>
     <tr>
-      <th>Game ID</th>
+      <th>Game Name</th>
     </tr>
     <br/>
     <tr v-for="game in games">

@@ -46,8 +46,8 @@ export default defineComponent({
     },
 
     addGame: async function (event) {
-      // console.log(event)
-      // console.log(event.target.dataset.gameid)
+      console.log(event)
+      console.log(event.target.dataset.gameid)
       console.log(this.userStore.user.username)
       const apiUrlAddGame = "http://localhost:8080/api/game";
       const bodyAddGame = JSON.stringify({
@@ -190,7 +190,7 @@ export default defineComponent({
                     &nbsp
                     <button class="button is-link modal-button fa fa-plus"
                            data-target="modal-image2"
-                           :data-gameid="game.id"
+                           :data-gameid="game.name"
                            id="DarkBlueTextYellow"
                            v-if="userStore.isLoggedIn === true"
                            @click="addGame">
@@ -241,7 +241,7 @@ export default defineComponent({
                     &nbsp
                     <button class="button is-link modal-button fa fa-plus"
                             data-target="modal-image2"
-                            :data-gameid="game.id"
+                            :data-gameid="game.name"
                             id="DarkBlueTextYellow"
                             v-if="userStore.isLoggedIn === true"
                             @click="addGame">
@@ -293,7 +293,7 @@ export default defineComponent({
                     &nbsp
                     <button class="button is-link modal-button fa fa-plus"
                             data-target="modal-image2"
-                            :data-gameid="game.id"
+                            :data-gameid="game.name"
                             id="DarkBlueTextYellow"
                             v-if="userStore.isLoggedIn === true"
                             @click="addGame">
@@ -344,7 +344,7 @@ export default defineComponent({
                     &nbsp
                     <button class="button is-link modal-button fa fa-plus"
                             data-target="modal-image2"
-                            :data-gameid="game.id"
+                            :data-gameid="game.name"
                             id="DarkBlueTextYellow"
                             v-if="userStore.isLoggedIn === true"
                             @click="addGame">
