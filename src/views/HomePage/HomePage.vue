@@ -192,7 +192,7 @@ export default defineComponent({
                            data-target="modal-image2"
                            :data-gameid="game.name"
                            id="DarkBlueTextYellow"
-                           v-if="userStore.isLoggedIn === true"
+                           v-if="userStore.user.username"
                            @click="addGame">
                      Add to Library
                     </button>
@@ -243,7 +243,7 @@ export default defineComponent({
                             data-target="modal-image2"
                             :data-gameid="game.name"
                             id="DarkBlueTextYellow"
-                            v-if="userStore.isLoggedIn === true"
+                            v-if="userStore.user.username"
                             @click="addGame">
                      Add to Library
                     </button>
@@ -295,7 +295,7 @@ export default defineComponent({
                             data-target="modal-image2"
                             :data-gameid="game.name"
                             id="DarkBlueTextYellow"
-                            v-if="userStore.isLoggedIn === true"
+                            v-if="userStore.user.username"
                             @click="addGame">
                      Add to Library
                     </button>
@@ -346,7 +346,7 @@ export default defineComponent({
                             data-target="modal-image2"
                             :data-gameid="game.name"
                             id="DarkBlueTextYellow"
-                            v-if="userStore.isLoggedIn === true"
+                            v-if="userStore.user.username"
                             @click="addGame">
                      Add to Library
                     </button>

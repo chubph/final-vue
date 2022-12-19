@@ -1,62 +1,42 @@
 import { defineStore } from "pinia";
 
+function getUserFromLocalStorage() {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (user) {
+            return user;
+        }else {
+            return {};
+        }
+    }
+function saveUserToLocalStorage(user) {
+    localStorage.setItem("user", JSON.stringify(user));
+
+}
+
+
 export const useUserStore = defineStore("user", {
     state: () => {
         return {
-            user: {
-
-            },
+            user: getUserFromLocalStorage(),
             isLoggedIn: false,
         }
     },
 
-    // data() {
-    //     return {
-    //         users: [],
-    //
-    //     }
-
-    // },
-
     actions: {
         setUser(user) {
             this.user = user
-            // if (this.user.length) {
-            //
-            //     this.users.push(user);
-
-            localStorage.setItem("user", JSON.stringify(user));
-            // localStorage.setItem("loggedin", JSON.stringify(this.isLoggedIn));
-
-            console.log(localStorage.getItem("user"))
-
-            // this.user = ""
-
+            saveUserToLocalStorage(user)
 
         },
-        changeNav() {
-            if (this.isLoggedIn === false) {
-                this.isLoggedIn = true;
-            } else {
-                this.isLoggedIn = false;
-                this.user = {}
-            }
-            console.log(this.isLoggedIn);
-        },
-
-        // setLoggedInUser(user){
-        //     if (this.user.length) {
-        //
-        //         this.users.push(user);
-        //
-        //         localStorage.setItem("users", JSON.stringify(this.users));
-        //         this.user = ""
+        // changeNav() {
+        //     if (this.isLoggedIn === false) {
+        //         this.isLoggedIn = true;
+        //     } else {
+        //         this.isLoggedIn = false;
         //     }
-        //     },
-        //
-            getUsers() {
-                this.user = JSON.parse(localStorage.getItem("user"));
-            },
+        //     console.log(this.isLoggedIn);
+        // },
+
     }
 
 

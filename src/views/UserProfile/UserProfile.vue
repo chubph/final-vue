@@ -14,34 +14,47 @@ export default defineComponent({
       games: {
 
       },
-      user: {
+      // user: {
+      //
+      // }
 
+    }
+
+  },
+  async mounted() {
+    const apiUrlGetGame = "http://localhost:8080/api/game/" + this.userStore.user.username;
+    const response = await fetch(apiUrlGetGame,{
+      method: "GET",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
       }
 
-    }
-
-  },
-  mounted() {
-    this.user = JSON.parse(localStorage.getItem("user"))
-  },
-  methods: {
-    getGameList:async function() {
-      const apiUrlGetGame = "http://localhost:8080/api/game/" + this.userStore.user.username;
-      const response = await fetch(apiUrlGetGame,{
-        method: "GET",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
-
-      });
-      const result = await response.json();
-      this.games=result
-      console.log(this.games);
+    });
+    const result = await response.json();
+    this.games=result
+    console.log(this.games);
 
 
-    }
+  }
 
-  },
+  // methods: {
+  //   getGameList:async function() {
+  //     const apiUrlGetGame = "http://localhost:8080/api/game/" + this.userStore.user.username;
+  //     const response = await fetch(apiUrlGetGame,{
+  //       method: "GET",
+  //       headers: {
+  //         "Content-type": "application/json; charset=UTF-8"
+  //       }
+  //
+  //     });
+  //     const result = await response.json();
+  //     this.games=result
+  //     console.log(this.games);
+  //
+  //
+  //   }
+  //
+  // },
 
 
 });
@@ -53,10 +66,10 @@ export default defineComponent({
   <br/>
   <br/>
   <br/>
-  <h1>Hello {{ this.user.username}}</h1>
+<!--  <h1>Hello {{ this.user.username}}</h1>-->
 
   <br/>
-  <button @click="getGameList">Game List</button>
+<!--  <button @click="getGameList">Game List</button>-->
   <br/>
   <br/>
   <table>

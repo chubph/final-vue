@@ -60,7 +60,7 @@ export default defineComponent({
         this.$router.push({
           path:"/"
         })
-        userStore.changeNav();
+        // userStore.changeNav();
 
 
       } catch (error) {
