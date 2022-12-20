@@ -3,6 +3,7 @@
 import {defineComponent} from "vue";
 import {useUserStore} from "@/stores/userStore";
 import Info from "@/components/Info/Info.vue";
+import Swal from "sweetalert2";
 
 export default defineComponent({
   name: "HomePage",
@@ -49,7 +50,7 @@ export default defineComponent({
       console.log(event)
       console.log(event.target.dataset.gameid)
       console.log(this.userStore.user.username)
-      try{
+      try {
         const apiUrlAddGame = "http://localhost:8080/api/game";
         const bodyAddGame = JSON.stringify({
           username: this.userStore.user.username,
@@ -66,11 +67,25 @@ export default defineComponent({
 
         const result = await response.json();
         console.log(result)
-        alert("Game added successfully in your library!!!")
-      }catch(error){
-        alert("Game already exists in your library!!!")
+
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Game added to library',
+          showConfirmButton: false,
+          timer: 1800
+        })
+
+      } catch (error) {
+        Swal.fire({
+          position: 'center',
+          icon: 'warning',
+          title: 'Game already in library',
+          showConfirmButton: false,
+          timer: 1800
+        })
       }
-      }
+    }
 
   },
 
@@ -124,6 +139,14 @@ export default defineComponent({
     console.log(currentGames4)
   }
 });
+
+
+// Swal.fire({
+//   title: 'Error!',
+//   text: 'Do you want to continue',
+//   icon: 'error',
+//   confirmButtonText: 'Cool'
+// })
 </script>
 
 <template>
@@ -136,19 +159,19 @@ export default defineComponent({
 
       <section class="hero  is-small" id="purpleCol">
         <div id="shadow2">
-        <div class="hero-body">
-          <figure class="image" id="logo">
-            <img src="../../assets/mkafnobg.png">
-          </figure>
-          <div class="container has-text-centered">
-            <p class="title" id="papaya">
-              Not sure what to play next?
-            </p>
-            <p class="subtitle has-text-white-bis">
-              Here are some suggestions!
-            </p>
+          <div class="hero-body">
+            <figure class="image" id="logo">
+              <img src="../../assets/mkafnobg.png">
+            </figure>
+            <div class="container has-text-centered">
+              <p class="title" id="papaya">
+                Not sure what to play next?
+              </p>
+              <p class="subtitle has-text-white-bis">
+                Here are some suggestions!
+              </p>
+            </div>
           </div>
-        </div>
         </div>
       </section>
       <br>
@@ -194,11 +217,11 @@ export default defineComponent({
                     </button>
                     &nbsp
                     <button class="button is-link modal-button fa fa-plus"
-                           data-target="modal-image2"
-                           :data-gameid="game.name"
-                           id="DarkBlueTextYellow"
-                           v-if="userStore.user.username"
-                           @click="addGame">
+                            data-target="modal-image2"
+                            :data-gameid="game.name"
+                            id="DarkBlueTextYellow"
+                            v-if="userStore.user.username"
+                            @click="addGame">
                      Add to Library
                     </button>
                   </div>
@@ -361,7 +384,7 @@ export default defineComponent({
                 </div>
             </span>
           </div>
-<!--          END OF 4 COLUMNS-->
+          <!--          END OF 4 COLUMNS-->
         </div>
       </section>
     </header>
@@ -405,11 +428,10 @@ h1 {
 #cardCol {
   /*background-color: #363636;*/
   text-decoration-color: papayawhip;
-  background: rgb(4,18,33);
-  background: linear-gradient(310deg, rgba(4,18,33,1) 20%, rgba(54,54,54,1) 84%, rgba(33,39,45,1) 97%);
+  background: rgb(4, 18, 33);
+  background: linear-gradient(310deg, rgba(4, 18, 33, 1) 20%, rgba(54, 54, 54, 1) 84%, rgba(33, 39, 45, 1) 97%);
 
 }
-
 
 
 #cardDetails {
@@ -423,11 +445,11 @@ h1 {
 }
 
 #shadow {
-  box-shadow: 10px 0px 10px 5px rgba(0,0,0,.8);
+  box-shadow: 10px 0px 10px 5px rgba(0, 0, 0, .8);
 }
 
 #shadow2 {
-  box-shadow: 15px 15px 15px 8px rgba(0,0,0,.8);
+  box-shadow: 15px 15px 15px 8px rgba(0, 0, 0, .8);
 }
 
 
