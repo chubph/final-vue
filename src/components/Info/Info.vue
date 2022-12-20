@@ -1,6 +1,7 @@
 <script>
 import {defineComponent} from "vue";
 import {useUserStore} from "@/stores/userStore";
+import Swal from "sweetalert2";
 
 export default defineComponent({
   name: "Info",
@@ -38,7 +39,7 @@ export default defineComponent({
       console.log(event)
       console.log(event.target.dataset.gameid)
       console.log(this.userStore.user.username)
-      try{
+      try {
         const apiUrlAddGame = "http://localhost:8080/api/game";
         const bodyAddGame = JSON.stringify({
           username: this.userStore.user.username,
@@ -55,9 +56,23 @@ export default defineComponent({
 
         const result = await response.json();
         console.log(result)
-        alert("Game added successfully!!!")
-      }catch(error){
-        alert("Game already exists in your library!!!")
+
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Game added to library',
+          showConfirmButton: false,
+          timer: 1800
+        })
+
+      } catch (error) {
+        Swal.fire({
+          position: 'center',
+          icon: 'warning',
+          title: 'Game already in library',
+          showConfirmButton: false,
+          timer: 1800
+        })
       }
     }
   },
