@@ -14,9 +14,6 @@ export default defineComponent({
       games: {
 
       },
-      // user: {
-      //
-      // }
 
     }
 
@@ -35,54 +32,36 @@ export default defineComponent({
     console.log(this.games);
 
 
-  }
-
-  // methods: {
-  //   getGameList:async function() {
-  //     const apiUrlGetGame = "http://localhost:8080/api/game/" + this.userStore.user.username;
-  //     const response = await fetch(apiUrlGetGame,{
-  //       method: "GET",
-  //       headers: {
-  //         "Content-type": "application/json; charset=UTF-8"
-  //       }
-  //
-  //     });
-  //     const result = await response.json();
-  //     this.games=result
-  //     console.log(this.games);
-  //
-  //
-  //   }
-  //
-  // },
-
+  },
 
 });
 
 </script>
 
 <template>
+  <header class="has-text-centered">
   <br/>
   <br/>
   <br/>
   <br/>
-<!--  <h1>Hello {{ this.user.username}}</h1>-->
 
-  <br/>
-<!--  <button @click="getGameList">Game List</button>-->
-  <br/>
-  <br/>
-  <table>
-    <tr>
-      <th>Game Name</th>
-    </tr>
-    <br/>
-    <tr v-for="game in games">
-      <td>{{ game }}</td>
-    </tr>
-  </table>
+    <div class="table-container has-text-centered">
+      <table class="table has-text-centered">
 
-  <div class='container hero is-fullheight'>
+          <tr>
+            <th class="has-text-centered">Game Name</th>
+            <th class="has-text-centered">Delete</th>
+          </tr>
+
+
+          <tr v-for="game in games">
+            <td>{{ game }}</td>
+            <td><button class="button is-link modal-button fa fa-minus" id="DarkBlueTextYellow">Delete</button></td>
+          </tr>
+      </table>
+    </div>
+
+  <div class='container hero is-fullheight is-centered'>
     <br/>
     <br/>
     <br/>
@@ -98,7 +77,7 @@ export default defineComponent({
   <p>Hello3</p>
 
 
-
+  </header>
 </template>
 
 
