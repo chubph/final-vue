@@ -89,7 +89,7 @@ export default defineComponent({
 
 <template>
 
-
+  <video :src="game.id">{{game.id}}</video>
   <div>
     <div class="card has-text-white-bis" id="cardCol">
       <div class="card-image">
@@ -98,8 +98,9 @@ export default defineComponent({
         <figure class="image is-4by3">
           <div class="fade">
             <div class="shadow">
-              <img :src="(`${game.image}`)" alt="Placeholder image">
+              <img :src="game.image" alt="Placeholder image">
             </div>
+
           </div>
         </figure>
 

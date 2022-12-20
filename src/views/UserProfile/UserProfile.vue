@@ -20,6 +20,7 @@ export default defineComponent({
   async mounted() {
     await this.getGames()
   },
+
   methods: {
     deleteGame: async function(game){
       const urlDelete = "http://localhost:8080/api/delete/" + this.userStore.user.username + "/" + game;
@@ -32,25 +33,30 @@ export default defineComponent({
       console.log(result);
       // alert("Game removed from your library!!!")
 
+
+
+      await this.getGames()
+    },
+
+    deleteGameConfirm (game) {
       Swal.fire({
         text: "Are you sure you want to delete this game?",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
+        confirmButtonColor: '#7c1209',
+        cancelButtonColor: '#041221',
         confirmButtonText: 'Delete!'
       }).then((result) => {
         if (result.isConfirmed) {
+          this.deleteGame(game)
           Swal.fire(
               'Game removed from library'
           )
         }
       })
 
-      await this.getGames()
-
-
     },
+
     async getGames() {
       const apiUrlGetGame = "http://localhost:8080/api/game/" + this.userStore.user.username;
       const response = await fetch(apiUrlGetGame,{
@@ -89,7 +95,7 @@ export default defineComponent({
 
           <tr v-for="game in games">
             <td>{{ game }}</td>
-            <td><button @click="deleteGame(game)" class="button is-link modal-button fa fa-minus" id="DarkBlueTextYellow">Delete</button></td>
+            <td><button @click="deleteGameConfirm(game)" class="button is-link modal-button fa fa-minus" id="DarkBlueTextYellow">Delete</button></td>
           </tr>
       </table>
     </div>
