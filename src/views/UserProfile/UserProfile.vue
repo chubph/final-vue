@@ -1,6 +1,7 @@
 <script>
 import { defineComponent } from "vue";
 import { useUserStore } from "@/stores/userStore";
+import Swal from "sweetalert2";
 
 export default defineComponent({
   name: "LogIn",
@@ -29,7 +30,23 @@ export default defineComponent({
       const result = await response.json();
 
       console.log(result);
-      alert("Game removed from your library!!!")
+      // alert("Game removed from your library!!!")
+
+      Swal.fire({
+        text: "Are you sure you want to delete this game?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Delete!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+              'Game removed from library'
+          )
+        }
+      })
+
       await this.getGames()
 
 
