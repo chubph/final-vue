@@ -2,6 +2,7 @@
 import {defineComponent} from "vue";
 import {useUserStore} from "@/stores/userStore";
 import Swal from "sweetalert2";
+import vhtml from 'vhtml';
 
 export default defineComponent({
   name: "Info",
@@ -23,12 +24,15 @@ export default defineComponent({
   watch: {
     async game() {
       const url = "https://api.rawg.io/api/games/" + this.game.id + "?key=2fe636237e6942a1afa7b7e75c21acc8";
-      const response = await fetch(url);
+      const response = await fetch(url, {
+
+      });
       const result = await response.json();
 
       const curGame = result;
-      this.gameInfo = curGame
-    }
+      this.gameInfo = curGame;
+    },
+
 
   },
 

@@ -1,11 +1,12 @@
 <script>
-import { defineComponent } from "vue";
+import {defineComponent} from "vue";
+import Swal from "sweetalert2";
 
 export default defineComponent({
   name: "SignUp",
   data() {
     return {
-      user :  {
+      user: {
         username: "",
         password: "",
         email: "",
@@ -14,13 +15,14 @@ export default defineComponent({
   },
 
   methods: {
-    getApi: function()  {
-      const apiUrl= "http://localhost:8080/api/users"
+    getApi: function () {
+      const apiUrl = "http://localhost:8080/api/users"
       const body = JSON.stringify({
         username: this.user.username,
         password: this.user.password,
         email: this.user.email
       })
+
       console.log(body)
       fetch(apiUrl, {
         method: 'POST',
@@ -29,16 +31,28 @@ export default defineComponent({
           'Content-type': 'application/json; charset=UTF-8',
         },
       })
-
           .then((response) => response.json())
-          .then((message) => window.alert("Welcome " + this.user.username + "!!!\nYou can now log in!!! 😎"))
-        .then(function() {
-          window.location = '/#/login'
-        })
-      .catch(error => {
-            window.alert("User already exists try another username!")
+          // .then((message) => window.alert("Welcome " + this.user.username + "!!!\nYou can now log in!!! 😎"))
+          Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: "Welcome " + this.user.username + "!!!\nYou can now log in!!! 😎",
+            showConfirmButton: false,
+            timer: 1800
           })
-
+          .then(function () {
+            window.location = '/#/login'
+          })
+          .catch(error => {
+            // window.alert("User already exists try another username!")
+            Swal.fire({
+              position: 'center',
+              icon: 'warning',
+              title: 'User already exists try a different username!',
+              showConfirmButton: false,
+              timer: 1800
+            })
+          })
     }
   }
 });
@@ -67,32 +81,36 @@ export default defineComponent({
               <p class="subtitle has-text-white">Please sign up to proceed.</p>
               <div class="box" id="DarkBlue">
                 <figure class="avatar">
-                  <img src="../../assets/mkafnobg.png" >
+                  <img src="../../assets/mkafnobg.png">
                 </figure>
                 <form>
                   <div class="field">
                     <div class="control">
-                      <input id="LightBlue" v-model="user.email" class="input is-large" type="email" placeholder="Your Email" autofocus="">
+                      <input id="LightBlue" v-model="user.email" class="input is-large" type="email"
+                             placeholder="Your Email" autofocus="">
                     </div>
                   </div>
                   <div class="field">
                     <div class="control">
-                      <input id="LightBlue" v-model="user.username" class="input is-large" type="username" placeholder="Your Username">
+                      <input id="LightBlue" v-model="user.username" class="input is-large" type="username"
+                             placeholder="Your Username">
                     </div>
                   </div>
                   <div class="field">
                     <div class="control">
-                      <input id="LightBlue" v-model="user.password" class="input is-large" type="password" placeholder="Your Password">
+                      <input id="LightBlue" v-model="user.password" class="input is-large" type="password"
+                             placeholder="Your Password">
                     </div>
                   </div>
                   <div class="field">
 
                   </div>
-                  <button @click="getApi"  id="DarkBlue" class="button is-block is-info is-large is-fullwidth" >Submit <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                  <button @click="getApi" id="DarkBlue" class="button is-block is-info is-large is-fullwidth">Submit <i
+                      class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
                 </form>
               </div>
               <p class="has-text-grey">
-<!--                <a id="signuplink" href="../">Sign Up</a> &nbsp;·&nbsp;-->
+                <!--                <a id="signuplink" href="../">Sign Up</a> &nbsp;·&nbsp;-->
                 <!--                <a href="../">Forgot Password</a> &nbsp;·&nbsp;-->
                 <!--                <a href="../">Need Help?</a>-->
               </p>
@@ -102,7 +120,6 @@ export default defineComponent({
       </section>
     </div>
   </div>
-
 
 
 </template>
