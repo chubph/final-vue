@@ -49,24 +49,29 @@ export default defineComponent({
       console.log(event)
       console.log(event.target.dataset.gameid)
       console.log(this.userStore.user.username)
-      const apiUrlAddGame = "http://localhost:8080/api/game";
-      const bodyAddGame = JSON.stringify({
-        username: this.userStore.user.username,
-        gameid: event.target.dataset.gameid,
-      });
+      try{
+        const apiUrlAddGame = "http://localhost:8080/api/game";
+        const bodyAddGame = JSON.stringify({
+          username: this.userStore.user.username,
+          gameid: event.target.dataset.gameid,
+        });
 
-      const response = await fetch(apiUrlAddGame, {
-        method: "POST",
-        body: bodyAddGame,
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
-      });
+        const response = await fetch(apiUrlAddGame, {
+          method: "POST",
+          body: bodyAddGame,
+          headers: {
+            "Content-type": "application/json; charset=UTF-8"
+          }
+        });
 
-      const result = await response.json();
-      console.log(result)
-      alert("Game added successfully!!!")
-    }
+        const result = await response.json();
+        console.log(result)
+        alert("Game added successfully!!!")
+      }catch(error){
+        alert("Game already exists in your library!!!")
+      }
+      }
+
   },
 
   async mounted() {
