@@ -470,7 +470,7 @@ h1 {
 
 
 .img-hover-zoom img {
-  transition: transform 1.15s ease;
+  transition: transform 2s ease;
 }
 
 
