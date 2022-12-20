@@ -49,9 +49,13 @@ export default defineComponent({
       }).then((result) => {
         if (result.isConfirmed) {
           this.deleteGame(game)
-          Swal.fire(
-              'Game removed from library'
-          )
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Game removed from library',
+            showConfirmButton: false,
+            timer: 1800
+          })
         }
       })
 
@@ -91,7 +95,6 @@ export default defineComponent({
             <th class="has-text-centered">Game Name</th>
             <th class="has-text-centered">Delete</th>
           </tr>
-
 
           <tr v-for="game in games">
             <td>{{ game }}</td>

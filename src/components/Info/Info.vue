@@ -74,6 +74,10 @@ export default defineComponent({
           timer: 1800
         })
       }
+    },
+
+    getVideo(game) {
+      return "/videos/" + game.id + ".mp4";
     }
   },
 
@@ -83,26 +87,33 @@ export default defineComponent({
   },
 
 
-});
+
+
+
+  });
 </script>
 
 
 <template>
 
-  <video :src="game.id">{{game.id}}</video>
+
   <div>
     <div class="card has-text-white-bis" id="cardCol">
       <div class="card-image">
         <h1 class="title has-text-white-bis has-text-centered">{{ game.name }}</h1>
 
-        <figure class="image is-4by3">
-          <div class="fade">
-            <div class="shadow">
-              <img :src="game.image" alt="Placeholder image">
-            </div>
+<!--        <figure class="image is-4by3">-->
+<!--          <div class="fade">-->
+<!--            <div class="shadow">-->
+<!--              <img :src="game.image" alt="Placeholder image">-->
+<!--            </div>-->
 
-          </div>
-        </figure>
+<!--          </div>-->
+<!--        </figure>-->
+
+        <video :key="getVideo(game)" width="1280" height="720" controls>
+          <source :src='getVideo(game)' type="video/mp4">
+        </video>
 
       </div>
       <div class="card-content">
