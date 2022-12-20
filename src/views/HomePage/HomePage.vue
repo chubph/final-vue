@@ -397,7 +397,7 @@ export default defineComponent({
         <Info :game="chosenGame"></Info>
       </div>
     </div>
-    <button class="modal-close is-large" aria-label="close">Close</button>
+    <button @click="" class="modal-close is-large" aria-label="close">Close</button>
   </div>
 </template>
 
