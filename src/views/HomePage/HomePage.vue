@@ -66,7 +66,7 @@ export default defineComponent({
 
         const result = await response.json();
         console.log(result)
-        alert("Game added successfully!!!")
+        alert("Game added successfully in your library!!!")
       }catch(error){
         alert("Game already exists in your library!!!")
       }

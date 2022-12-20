@@ -13,26 +13,42 @@ export default defineComponent({
     return {
       games: {
 
-      },
-
+      }
     }
-
   },
   async mounted() {
-    const apiUrlGetGame = "http://localhost:8080/api/game/" + this.userStore.user.username;
-    const response = await fetch(apiUrlGetGame,{
-      method: "GET",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8"
-      }
-
-    });
-    const result = await response.json();
-    this.games=result
-    console.log(this.games);
-
-
+    await this.getGames()
   },
+  methods: {
+    deleteGame: async function(game){
+      const urlDelete = "http://localhost:8080/api/delete/" + this.userStore.user.username + "/" + game;
+      const response = await fetch(urlDelete,{
+        method:"DELETE"
+          }
+       );
+      const result = await response.json();
+
+      console.log(result);
+      alert("Game removed from your library!!!")
+      await this.getGames()
+
+
+    },
+    async getGames() {
+      const apiUrlGetGame = "http://localhost:8080/api/game/" + this.userStore.user.username;
+      const response = await fetch(apiUrlGetGame,{
+        method: "GET",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+
+      });
+      const result = await response.json();
+      this.games=result
+      console.log(this.games);
+
+    }
+  }
 
 });
 
@@ -56,7 +72,7 @@ export default defineComponent({
 
           <tr v-for="game in games">
             <td>{{ game }}</td>
-            <td><button class="button is-link modal-button fa fa-minus" id="DarkBlueTextYellow">Delete</button></td>
+            <td><button @click="deleteGame(game)" class="button is-link modal-button fa fa-minus" id="DarkBlueTextYellow">Delete</button></td>
           </tr>
       </table>
     </div>
