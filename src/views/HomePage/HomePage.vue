@@ -180,54 +180,56 @@ export default defineComponent({
       <section class="container">
         <div class="columns features ">
 
-          <!--          COLUMN 1  -->
+          <!--          COLUMN 1 -->
           <div class="column is-3 ">
             <span v-for="game in games">
               <br>
               <div id="shadow">
 
-              <div class="card is-shady is-small" id="cardCol">
+                <div class="card is-shady is-small" id="cardCol">
+                  <div class="img-hover-zoom">
 
-                <div class="card-image">
-                  <figure class="image is-5by3">
-                    <img :src="(`${game.image}`)" alt="Placeholder image" class="modal-button"
-                         data-target="modal-image2">
-                  </figure>
-                </div>
-
-
-                <div class="card-content is-halfheight" id="cardContent">
-                  <div class="content" id="cardDetails">
-
-                    <h4 class="has-text-white-bis">{{ game.name }}</h4>
-
-                    <p>
-                      <strong class="has-text-white-bis">
-                      Rating: {{ game.rating }}
-                      <i class="fa fa-star" id="asteraki"></i>
-                      </strong>
-                    </p>
+                    <div class="card-image">
+                      <figure class="image is-5by3">
+                        <img :src="(`${game.image}`)" alt="Placeholder image" class="modal-button"
+                             data-target="modal-image2">
+                      </figure>
+                    </div>
 
 
-                    <button class="js-modal-trigger button is-link modal-button fa fa-info"
-                            data-target="modal-js-example"
-                            @click="handleInfoClick(game)"
-                            id="DarkBlue">
-                      Info
-                    </button>
-                    &nbsp
-                    <button class="button is-link modal-button fa fa-plus"
-                            data-target="modal-image2"
-                            :data-gameid="game.name"
-                            id="DarkBlueTextYellow"
-                            v-if="userStore.user.username"
-                            @click="addGame">
-                     Add to Library
-                    </button>
+                    <div class="card-content is-halfheight" id="cardContent">
+                      <div class="content" id="cardDetails">
+
+                       <h4 class="has-text-white-bis">{{ game.name }}</h4>
+
+                        <p>
+                          <strong class="has-text-white-bis">
+                          Rating: {{ game.rating }}
+                          <i class="fa fa-star" id="asteraki"></i>
+                          </strong>
+                        </p>
+
+
+                        <button class="js-modal-trigger button is-link modal-button fa fa-info"
+                                data-target="modal-js-example"
+                                @click="handleInfoClick(game)"
+                                id="DarkBlue">
+                          Info
+                        </button>
+                        &nbsp
+                        <button class="button is-link modal-button fa fa-plus"
+                                data-target="modal-image2"
+                                :data-gameid="game.name"
+                                id="DarkBlueTextYellow"
+                                v-if="userStore.user.username"
+                                @click="addGame">
+                         Add to Library
+                        </button>
+                     </div>
+                   </div>
                   </div>
                 </div>
               </div>
-                </div>
             </span>
           </div>
 
@@ -237,48 +239,50 @@ export default defineComponent({
               <br>
               <div id="shadow">
 
-              <div class="card is-shady is-small" id="cardCol">
+                <div class="card is-shady is-small" id="cardCol">
+                  <div class="img-hover-zoom">
 
-                <div class="card-image">
-                  <figure class="image is-5by3">
-                    <img :src="(`${game.image}`)" alt="Placeholder image" class="modal-button"
-                         data-target="modal-image2">
-                  </figure>
-                </div>
-
-
-                <div class="card-content is-halfheight" id="cardContent">
-                  <div class="content" id="cardDetails">
-
-                    <h4 class="has-text-white-bis">{{ game.name }}</h4>
-
-                    <p>
-                      <strong class="has-text-white-bis">
-                      Rating: {{ game.rating }}
-                      <i class="fa fa-star" id="asteraki"></i>
-                      </strong>
-                    </p>
+                    <div class="card-image">
+                      <figure class="image is-5by3">
+                        <img :src="(`${game.image}`)" alt="Placeholder image" class="modal-button"
+                             data-target="modal-image2">
+                      </figure>
+                    </div>
 
 
-                    <button class="js-modal-trigger button is-link modal-button fa fa-info"
-                            data-target="modal-js-example"
-                            @click="handleInfoClick(game)"
-                            id="DarkBlue">
-                      Info
-                    </button>
-                    &nbsp
-                    <button class="button is-link modal-button fa fa-plus"
-                            data-target="modal-image2"
-                            :data-gameid="game.name"
-                            id="DarkBlueTextYellow"
-                            v-if="userStore.user.username"
-                            @click="addGame">
-                     Add to Library
-                    </button>
+                    <div class="card-content is-halfheight" id="cardContent">
+                      <div class="content" id="cardDetails">
+
+                       <h4 class="has-text-white-bis">{{ game.name }}</h4>
+
+                        <p>
+                          <strong class="has-text-white-bis">
+                          Rating: {{ game.rating }}
+                          <i class="fa fa-star" id="asteraki"></i>
+                          </strong>
+                        </p>
+
+
+                        <button class="js-modal-trigger button is-link modal-button fa fa-info"
+                                data-target="modal-js-example"
+                                @click="handleInfoClick(game)"
+                                id="DarkBlue">
+                          Info
+                        </button>
+                        &nbsp
+                        <button class="button is-link modal-button fa fa-plus"
+                                data-target="modal-image2"
+                                :data-gameid="game.name"
+                                id="DarkBlueTextYellow"
+                                v-if="userStore.user.username"
+                                @click="addGame">
+                         Add to Library
+                        </button>
+                     </div>
+                   </div>
                   </div>
                 </div>
               </div>
-                </div>
             </span>
           </div>
 
@@ -289,48 +293,50 @@ export default defineComponent({
               <br>
               <div id="shadow">
 
-              <div class="card is-shady is-small" id="cardCol">
+                <div class="card is-shady is-small" id="cardCol">
+                  <div class="img-hover-zoom">
 
-                <div class="card-image">
-                  <figure class="image is-5by3">
-                    <img :src="(`${game.image}`)" alt="Placeholder image" class="modal-button"
-                         data-target="modal-image2">
-                  </figure>
-                </div>
-
-
-                <div class="card-content is-halfheight" id="cardContent">
-                  <div class="content" id="cardDetails">
-
-                    <h4 class="has-text-white-bis">{{ game.name }}</h4>
-
-                    <p>
-                      <strong class="has-text-white-bis">
-                      Rating: {{ game.rating }}
-                      <i class="fa fa-star" id="asteraki"></i>
-                      </strong>
-                    </p>
+                    <div class="card-image">
+                      <figure class="image is-5by3">
+                        <img :src="(`${game.image}`)" alt="Placeholder image" class="modal-button"
+                             data-target="modal-image2">
+                      </figure>
+                    </div>
 
 
-                    <button class="js-modal-trigger button is-link modal-button fa fa-info"
-                            data-target="modal-js-example"
-                            @click="handleInfoClick(game)"
-                            id="DarkBlue">
-                      Info
-                    </button>
-                    &nbsp
-                    <button class="button is-link modal-button fa fa-plus"
-                            data-target="modal-image2"
-                            :data-gameid="game.name"
-                            id="DarkBlueTextYellow"
-                            v-if="userStore.user.username"
-                            @click="addGame">
-                     Add to Library
-                    </button>
+                    <div class="card-content is-halfheight" id="cardContent">
+                      <div class="content" id="cardDetails">
+
+                       <h4 class="has-text-white-bis">{{ game.name }}</h4>
+
+                        <p>
+                          <strong class="has-text-white-bis">
+                          Rating: {{ game.rating }}
+                          <i class="fa fa-star" id="asteraki"></i>
+                          </strong>
+                        </p>
+
+
+                        <button class="js-modal-trigger button is-link modal-button fa fa-info"
+                                data-target="modal-js-example"
+                                @click="handleInfoClick(game)"
+                                id="DarkBlue">
+                          Info
+                        </button>
+                        &nbsp
+                        <button class="button is-link modal-button fa fa-plus"
+                                data-target="modal-image2"
+                                :data-gameid="game.name"
+                                id="DarkBlueTextYellow"
+                                v-if="userStore.user.username"
+                                @click="addGame">
+                         Add to Library
+                        </button>
+                     </div>
+                   </div>
                   </div>
                 </div>
               </div>
-                </div>
             </span>
           </div>
 
@@ -340,51 +346,55 @@ export default defineComponent({
               <br>
               <div id="shadow">
 
-              <div class="card is-shady is-small" id="cardCol">
+                <div class="card is-shady is-small" id="cardCol">
+                  <div class="img-hover-zoom">
 
-                <div class="card-image">
-                  <figure class="image is-5by3">
-                    <img :src="(`${game.image}`)" alt="Placeholder image" class="modal-button"
-                         data-target="modal-image2">
-                  </figure>
-                </div>
-
-
-                <div class="card-content is-halfheight" id="cardContent">
-                  <div class="content" id="cardDetails">
-
-                    <h4 class="has-text-white-bis">{{ game.name }}</h4>
-
-                    <p>
-                      <strong class="has-text-white-bis">
-                      Rating: {{ game.rating }}
-                      <i class="fa fa-star" id="asteraki"></i>
-                      </strong>
-                    </p>
+                    <div class="card-image">
+                      <figure class="image is-5by3">
+                        <img :src="(`${game.image}`)" alt="Placeholder image" class="modal-button"
+                           data-target="modal-image2">
+                      </figure>
+                    </div>
 
 
-                    <button class="js-modal-trigger button is-link modal-button fa fa-info"
-                            data-target="modal-js-example"
-                            @click="handleInfoClick(game)"
-                            id="DarkBlue">
-                      Info
-                    </button>
-                    &nbsp
-                    <button class="button is-link modal-button fa fa-plus"
-                            data-target="modal-image2"
-                            :data-gameid="game.name"
-                            id="DarkBlueTextYellow"
-                            v-if="userStore.user.username"
-                            @click="addGame">
-                     Add to Library
-                    </button>
+                    <div class="card-content is-halfheight" id="cardContent">
+                      <div class="content" id="cardDetails">
+
+                       <h4 class="has-text-white-bis">{{ game.name }}</h4>
+
+                        <p>
+                          <strong class="has-text-white-bis">
+                          Rating: {{ game.rating }}
+                          <i class="fa fa-star" id="asteraki"></i>
+                          </strong>
+                        </p>
+
+
+                        <button class="js-modal-trigger button is-link modal-button fa fa-info"
+                                data-target="modal-js-example"
+                                @click="handleInfoClick(game)"
+                                id="DarkBlue">
+                          Info
+                        </button>
+                        &nbsp
+                        <button class="button is-link modal-button fa fa-plus"
+                                data-target="modal-image2"
+                                :data-gameid="game.name"
+                                id="DarkBlueTextYellow"
+                                v-if="userStore.user.username"
+                                @click="addGame">
+                         Add to Library
+                        </button>
+                     </div>
+                   </div>
                   </div>
                 </div>
               </div>
-                </div>
             </span>
           </div>
-          <!--          END OF 4 COLUMNS-->
+
+
+          <!--  END OF  COLUMNS-->
         </div>
       </section>
     </header>
@@ -450,6 +460,22 @@ h1 {
 
 #shadow2 {
   box-shadow: 15px 15px 15px 8px rgba(0, 0, 0, .8);
+}
+
+
+.img-hover-zoom {
+  /*height: 300px; !* [1.1] Set it as per your need *!*/
+  overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+
+.img-hover-zoom img {
+  transition: transform 1.15s ease;
+}
+
+
+.img-hover-zoom:hover img {
+  transform: scale(1.18);
 }
 
 
