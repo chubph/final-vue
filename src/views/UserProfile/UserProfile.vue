@@ -93,15 +93,14 @@ export default defineComponent({
 
           <tr>
             <th class="has-text-centered">Game Name</th>
-            <th class="has-text-centered">Delete</th>
             <th class="has-text-centered">Status</th>
-            <th class="has-text-centered">Personal Rating</th>
+            <th class="has-text-centered">Delete</th>
+
 
           </tr>
 
           <tr v-for="game in games">
             <td>{{ game }}</td>
-            <td><button @click="deleteGameConfirm(game)" class="button is-link modal-button fa fa-minus" id="DarkBlueTextYellow">Delete</button></td>
             <td>
 
               <div class="dropdown is-hoverable select">
@@ -112,7 +111,8 @@ export default defineComponent({
                 </select>
               </div>
             </td>
-            <td></td>
+            <td><button @click="deleteGameConfirm(game)" class="button is-link modal-button fa fa-minus" id="DarkBlueTextYellow">Delete</button></td>
+
           </tr>
       </table>
     </div>
