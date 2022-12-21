@@ -12,7 +12,7 @@ export default defineComponent({
   },
   data() {
     return {
-      games: new Map()
+      gamez: new Map()
 
     }
   },
@@ -121,12 +121,12 @@ export default defineComponent({
 
           </tr>
 
-          <tr v-for="[item,key] in games " >
-            <td>{{ item }}</td>
+          <tr v-for="[key, value] in gamez " >
+            <td>{{ key }}</td>
             <td>
 
               <div class="dropdown is-hoverable select">
-                <select @change="updateGame" :data-game="game" :value="item">
+                <select @change="updateGame" :data-game="game" :value="value">
                   <option value="Choose">Choose</option>
                   <option value="Wanted">Wanted</option>
                   <option value="Played">Played</option>
