@@ -56,11 +56,29 @@ export default defineComponent({
           });
           window.location = "/#/login";
         } else if (this.v$.user.email.$error){
-          alert("Your email is not a valid address");
+          Swal.fire({
+            position: "center",
+            icon: "warning",
+            title: "Your email is not a valid address",
+            showConfirmButton: false,
+            timer: 1800
+          });
         } else if (this.v$.user.username.$error){
-          alert("Username is required");
+          Swal.fire({
+            position: "center",
+            icon: "warning",
+            title: "Username is required",
+            showConfirmButton: false,
+            timer: 1800
+          });
         } else if (this.v$.user.password.$error){
-          alert("Password is required");
+          Swal.fire({
+            position: "center",
+            icon: "warning",
+            title: "Password is required",
+            showConfirmButton: false,
+            timer: 1800
+          });
         }
       } catch (error) {
         await Swal.fire({

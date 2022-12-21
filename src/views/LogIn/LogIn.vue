@@ -54,10 +54,8 @@ export default defineComponent({
         const userStore = useUserStore();
         console.log(userStore)
         userStore.setUser(result);
-        // localStorage.setItem("user", JSON.stringify(result));
-        // console.log(JSON.parse(localStorage.getItem("user")))
 
-        const welcomeStr = "Welcome " + this.user.username + "!!!\nYou are now logged in!!! 😎\n Redirecting to your Home Page"
+        const welcomeStr = "Welcome " + this.user.username + "!!\nYou are now logged in!! 😎\n Redirecting to your Home Page"
         Swal.fire({
           position: 'center',
           icon: 'success',
@@ -65,50 +63,22 @@ export default defineComponent({
           showConfirmButton: false,
           timer: 2800
         })
-
-        // window.alert("Welcome " + this.user.username + "!!!\nYou are now logged in!!! 😎")
         this.$router.push({
           path:"/"
         })
-        // userStore.changeNav();
-
 
       } catch (error) {
 
         Swal.fire({
           position: 'center',
           icon: 'error',
-          title: "User not found!!! Try again!!!",
+          title: "User||Password not found!! \n Try again!!",
           showConfirmButton: true,
         })
-        // alert("User not found!!! Try again!!!")
       }
-      //   const response = await fetch(apiUrlLogin, {
-      //         method: "POST",
-      //         body: bodyLogin,
-      //         headers: {
-      //           "Content-type": "application/json; charset=UTF-8"
-      //         }
-      //       });
-      // const result = await response.json();
-      //
-      // console.log(result)
-      // const userStore = useUserStore();
-      // console.log(userStore)
-      // userStore.setUser(result);
-      // window.alert("Welcome " + this.user.username + "!!!\nYou are now logged in!!! 😎")
-      // this.$router.push({
-      //   path:"/"
-      // })
-      // userStore.changeNav();
-
-
-
-
     }
   }
 });
-
 
 </script>
 
@@ -143,10 +113,7 @@ export default defineComponent({
                              placeholder="Your Password">
                     </div>
                   </div>
-                  <div class="field">                    <!--                    <label class="checkbox">-->
-                    <!--                      <input type="checkbox">-->
-                    <!--                      Remember me-->
-                    <!--                    </label>-->                  </div>
+                  <div class="field"></div>
                   <button @click="getApi2"
                           id="DarkBlue"
                           class="button is-block is-info is-large is-fullwidth">
@@ -157,9 +124,7 @@ export default defineComponent({
               </div>
               <p class="has-text-grey">
                 <a id="signuplink" href="../#/signup">Not a member?
-                  <br>Register here</a>
-                <!--                <a href="../">Forgot Password</a> &nbsp;·&nbsp;-->
-                <!--                <a href="../">Need Help?</a>-->              </p></div>
+                  <br>Register here</a></p></div>
           </div>
         </div>
       </section>
