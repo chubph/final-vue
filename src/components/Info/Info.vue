@@ -115,7 +115,7 @@ export default defineComponent({
 <!--          </div>-->
 <!--        </figure>-->
 
-        <video :key="getVideo(game)" width="1280" height="720" controls>
+        <video controls muted autoplay :key="getVideo(game)" width="1280" height="720">
           <source :src='getVideo(game)' type="video/mp4">
         </video>
 
