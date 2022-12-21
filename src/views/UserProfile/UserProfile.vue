@@ -117,9 +117,10 @@ export default defineComponent({
     <br>
     <br>
     <br>
-
+    <br>
+    <br>
     <div class="logo">
-      <b>us<span>ER</span><span>&nbsp</span>PR<span>OF</span>ILE</b>
+      <b>US<span>ER</span><span>&nbsp</span>PR<span>OF</span>ILE</b>
     </div>
     <br>
     <br>
@@ -211,7 +212,7 @@ body {
 
 
 .logo b {
-  font: 200 12vh "Vibur";
+  font: 200 10vh "Vibur";
   color: #fee;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
 }
