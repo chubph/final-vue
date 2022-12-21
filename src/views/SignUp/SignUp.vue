@@ -1,6 +1,9 @@
 <script>
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 import Swal from "sweetalert2";
+import useValidate from "@vuelidate/core";
+import { required, email, minLength } from "@vuelidate/validators";
+
 
 export default defineComponent({
   name: "SignUp",
@@ -9,52 +12,69 @@ export default defineComponent({
       user: {
         username: "",
         password: "",
-        email: "",
+        email: ""
       }
-    }
+    };
   },
-
+  setup: () => ({
+    v$: useValidate()
+  }),
+  validations() {
+    return {
+      user: {
+        username: { required },
+        password: { required },
+        email: { required, email }
+      }
+    };
+  },
   methods: {
-    getApi: function () {
-      const apiUrl = "http://localhost:8080/api/users"
+    getApi: async function() {
+      const apiUrl = "http://localhost:8080/api/users";
       const body = JSON.stringify({
         username: this.user.username,
         password: this.user.password,
         email: this.user.email
-      })
-
-      console.log(body)
-      fetch(apiUrl, {
-        method: 'POST',
-        body: body,
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        },
-      })
-          .then((response) => response.json())
-          // .then((message) => window.alert("Welcome " + this.user.username + "!!!\nYou can now log in!!! 😎"))
-          Swal.fire({
-            position: 'center',
-            icon: 'warning',
+      });
+      try {
+        this.v$.$validate();
+        if (!this.v$.$error) {
+          const response = await fetch(apiUrl, {
+            method: "POST",
+            body: body,
+            headers: {
+              "Content-type": "application/json; charset=UTF-8"
+            }
+          });
+          const result = await response.json();
+          await Swal.fire({
+            position: "center",
+            icon: "warning",
             title: "Welcome " + this.user.username + "!!!\nYou can now log in!!! 😎",
             showConfirmButton: false,
             timer: 1800
-          })
-          .then(function () {
-            window.location = '/#/login'
-          })
-          .catch(error => {
-            // window.alert("User already exists try another username!")
-            Swal.fire({
-              position: 'center',
-              icon: 'warning',
-              title: 'User already exists try a different username!',
-              showConfirmButton: false,
-              timer: 1800
-            })
-          })
+          });
+          window.location = "/#/login";
+        } else if (this.v$.user.email.$error){
+          alert("Your email is not a valid address");
+        } else if (this.v$.user.username.$error){
+          alert("Username is required");
+        } else if (this.v$.user.password.$error){
+          alert("Password is required");
+        }
+      } catch (error) {
+        await Swal.fire({
+          position: "center",
+          icon: "warning",
+          title: "User already exists try a different username!",
+          showConfirmButton: false,
+          timer: 1800
+        });
+      }
     }
+
   }
+
 });
 
 
@@ -64,7 +84,7 @@ export default defineComponent({
 
 
   <div class="bg-img">
-    <div class='container hero is-fullheight'>
+    <div class="container hero is-fullheight">
       <header class="has-text-centered">
         <br>
         <br>
@@ -98,22 +118,19 @@ export default defineComponent({
                   </div>
                   <div class="field">
                     <div class="control">
+
                       <input id="LightBlue" v-model="user.password" class="input is-large" type="password"
                              placeholder="Your Password">
                     </div>
                   </div>
                   <div class="field">
 
+
                   </div>
                   <button @click="getApi" id="DarkBlue" class="button is-block is-info is-large is-fullwidth">Submit <i
-                      class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                    class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
                 </form>
               </div>
-              <p class="has-text-grey">
-                <!--                <a id="signuplink" href="../">Sign Up</a> &nbsp;·&nbsp;-->
-                <!--                <a href="../">Forgot Password</a> &nbsp;·&nbsp;-->
-                <!--                <a href="../">Need Help?</a>-->
-              </p>
             </div>
           </div>
         </div>
