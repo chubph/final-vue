@@ -195,7 +195,7 @@ export default defineComponent({
                              data-target="modal-image2">
                       </figure>
                     </div>
-
+<!--//sxolio-->
 
                     <div class="card-content is-halfheight" id="cardContent">
                       <div class="content" id="cardDetails">
