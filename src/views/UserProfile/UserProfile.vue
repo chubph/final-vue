@@ -14,7 +14,8 @@ export default defineComponent({
     return {
       games: {
 
-      }
+      },
+      gamestatus: ""
     }
   },
   async mounted() {
@@ -74,6 +75,29 @@ export default defineComponent({
       this.games=result
       console.log(this.games);
 
+    },
+
+    async updateGame(event) {
+      console.log(event)
+      const gameid = event.target.dataset.game
+      const gamestatus = event.target.value
+
+      const apiUrlUpdateGame = "http://localhost:8080/api/update";
+      const bodyUpdate = JSON.stringify({
+        username: this.userStore.user.username,
+        gameid: gameid,
+        gamestatus: gamestatus
+      });
+      const response = await fetch(apiUrlUpdateGame,{
+        method: "PUT",
+        body: bodyUpdate,
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+
+      });
+      const result = await response.json();
+
     }
   }
 
@@ -104,10 +128,10 @@ export default defineComponent({
             <td>
 
               <div class="dropdown is-hoverable select">
-                <select>
-                  <option>Choose</option>
-                  <option>Wanted</option>
-                  <option>Played</option>
+                <select @change="updateGame" :data-game="game"  >
+                  <option value="Choose">Choose</option>
+                  <option value="Wanted">Wanted</option>
+                  <option value="Played">Played</option>
                 </select>
               </div>
             </td>
