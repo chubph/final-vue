@@ -133,6 +133,7 @@ export default defineComponent({
     <div class="table-container ">
 
       <!--  <header class="has-text-centered" >-->
+      <div class="is-size-5-widescreen is-centered">
       <table class="table is-align-content-center has-text-centered">
 
         <tr>
@@ -163,6 +164,7 @@ export default defineComponent({
 
         </tr>
       </table>
+      </div>
     </div>
 
     <div class='container hero is-fullheight is-centered'>
