@@ -12,8 +12,7 @@ export default defineComponent({
   },
   data() {
     return {
-      gamez: new Map()
-
+      games: []
     }
   },
   async mounted() {
@@ -104,14 +103,14 @@ export default defineComponent({
 </script>
 
 <template>
-  <header class="has-text-centered">
+  <header class="has-text-centered" id="bgr">
   <br/>
   <br/>
   <br/>
   <br/>
 
     <div class="table-container has-text-centered">
-      <table class="table has-text-centered">
+      <table class="table is-align-content-center has-text-centered">
 
           <tr>
             <th class="has-text-centered">Game Name</th>
@@ -121,35 +120,28 @@ export default defineComponent({
 
           </tr>
 
-          <tr v-for="[key, value] in gamez " >
-            <td>{{ key }}</td>
+          <tr v-for="game in games">
+            <td>{{ game.gameid }}</td>
             <td>
 
               <div class="dropdown is-hoverable select">
-                <select @change="updateGame" :data-game="game" :value="value">
+                <select @change="updateGame" :data-game="game.gameid" :value="game.gamestatus" >
                   <option value="Choose">Choose</option>
                   <option value="Wanted">Wanted</option>
                   <option value="Played">Played</option>
                 </select>
               </div>
             </td>
-            <td><button @click="deleteGameConfirm(game)" class="button is-link modal-button fa fa-minus" id="DarkBlueTextYellow">Delete</button></td>
+            <td><button @click="deleteGameConfirm(game.gameid)" class="button is-link modal-button fa fa-minus" id="DarkBlueTextYellow">Delete</button></td>
 
           </tr>
       </table>
     </div>
 
   <div class='container hero is-fullheight is-centered'>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+
 
   </div>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
 
 
 
@@ -160,4 +152,8 @@ export default defineComponent({
 
 <style scoped>
 
+#bgr {
+  background-image: url("background/controllers.jpg");
+  opacity: 60%;
+}
 </style>
