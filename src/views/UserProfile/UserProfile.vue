@@ -12,10 +12,8 @@ export default defineComponent({
   },
   data() {
     return {
-      games: {
+      games: new Map()
 
-      },
-      gamestatus: ""
     }
   },
   async mounted() {
@@ -123,8 +121,8 @@ export default defineComponent({
 
           </tr>
 
-          <tr v-for="game in games">
-            <td>{{ game }}</td>
+          <tr v-for="[key,value] of games " >
+            <td>{{ key }}</td>
             <td>
 
               <div class="dropdown is-hoverable select">
