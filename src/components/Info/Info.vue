@@ -17,6 +17,7 @@ export default defineComponent({
         description: "",
       },
       GameDetails: {},
+
     }
   },
 

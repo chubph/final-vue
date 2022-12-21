@@ -121,12 +121,12 @@ export default defineComponent({
 
           </tr>
 
-          <tr v-for="[key,value] of games " >
-            <td>{{ key }}</td>
+          <tr v-for="[item,key] in games " >
+            <td>{{ item }}</td>
             <td>
 
               <div class="dropdown is-hoverable select">
-                <select @change="updateGame" :data-game="game"  >
+                <select @change="updateGame" :data-game="game" :value="item">
                   <option value="Choose">Choose</option>
                   <option value="Wanted">Wanted</option>
                   <option value="Played">Played</option>
@@ -145,14 +145,12 @@ export default defineComponent({
     <br/>
     <br/>
 
-    <p>Hello2</p>
   </div>
   <br/>
   <br/>
   <br/>
   <br/>
 
-  <p>Hello3</p>
 
 
   </header>
