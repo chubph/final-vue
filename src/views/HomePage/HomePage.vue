@@ -450,34 +450,22 @@ h1 {
 }
 
 #cardContent {
-
-
 }
-
 #shadow {
   box-shadow: 10px 0px 10px 5px rgba(0, 0, 0, .8);
 }
-
 #shadow2 {
   box-shadow: 15px 15px 15px 8px rgba(0, 0, 0, .8);
 }
-
-
 .img-hover-zoom {
   /*height: 300px; !* [1.1] Set it as per your need *!*/
   overflow: hidden; /* [1.2] Hide the overflowing of child elements */
 }
-
-
 .img-hover-zoom img {
   transition: transform 2s ease;
 }
-
-
 .img-hover-zoom:hover img {
   transform: scale(1.18);
 }
-
-
 </style>
 
