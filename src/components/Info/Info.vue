@@ -32,6 +32,10 @@ export default defineComponent({
 
       const curGame = result;
       this.gameInfo = curGame;
+
+      this.gameInfo.description = curGame.description;
+      let doc = new DOMParser().parseFromString(this.gameInfo.description, 'text/html')
+      this.gameInfo.description = doc.body.textContent;
     },
 
 
