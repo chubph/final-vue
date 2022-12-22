@@ -218,7 +218,7 @@ body {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
+  color: cadetblue;
   opacity: 50; /* Firefox */
 }
 

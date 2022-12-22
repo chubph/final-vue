@@ -246,7 +246,7 @@ body {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
+  color: cadetblue !important;
   opacity: 50; /* Firefox */
 }
 #DarkBlue
