@@ -142,13 +142,6 @@ export default defineComponent({
   }
 });
 
-
-// Swal.fire({
-//   title: 'Error!',
-//   text: 'Do you want to continue',
-//   icon: 'error',
-//   confirmButtonText: 'Cool'
-// })
 </script>
 
 <template>
@@ -161,7 +154,7 @@ export default defineComponent({
 
       <section class="hero  is-small" id="purpleCol">
         <div id="shadow2">
-          <div class="hero-body">
+          <div class="hero-body" id="fade8">
             <figure class="image" id="logo">
               <img src="../../assets/mkafnobg.png">
             </figure>
@@ -183,7 +176,7 @@ export default defineComponent({
         <div class="columns features ">
 
           <!--          COLUMN 1 -->
-          <div class="column is-3 ">
+          <div class="column is-3 " id="fade6">
             <span v-for="game in games">
               <br>
               <div id="shadow">
@@ -236,7 +229,7 @@ export default defineComponent({
           </div>
 
           <!--          COLUMN 2  -->
-          <div class="column is-3 ">
+          <div class="column is-3" id="fade8">
             <span v-for="game in games2">
               <br>
               <div id="shadow">
@@ -290,7 +283,7 @@ export default defineComponent({
 
 
           <!--          COLUMN 3  -->
-          <div class="column is-3 ">
+          <div class="column is-3" id="fade10">
             <span v-for="game in games3">
               <br>
               <div id="shadow">
@@ -343,7 +336,7 @@ export default defineComponent({
           </div>
 
           <!--          COLUMN 4  -->
-          <div class="column is-3 ">
+          <div class="column is-3" id="fade12">
             <span v-for="game in games4">
               <br>
               <div id="shadow">
@@ -469,6 +462,44 @@ h1 {
 }
 .img-hover-zoom:hover img {
   transform: scale(1.18);
+}
+
+#fade4 {
+  animation: fadeIn 4s;
+  background-blend-mode: hard-light;
+}
+
+#fade6 {
+  animation: fadeIn 10s;
+  background-blend-mode: hard-light;
+}
+
+#fade8 {
+  animation: fadeIn 12s;
+  background-blend-mode: hard-light;
+}
+
+#fade10 {
+  animation: fadeIn 15s;
+  background-blend-mode: hard-light;
+}
+
+#fade12 {
+  animation: fadeIn 18s;
+  background-blend-mode: hard-light;
+}
+
+.shadow {
+  box-shadow: 0 0 18px 8px white inset;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 2;
+  }
 }
 
 

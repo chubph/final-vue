@@ -2,7 +2,6 @@
 import {defineComponent} from "vue";
 import {useUserStore} from "@/stores/userStore";
 import Swal from "sweetalert2";
-import vhtml from 'vhtml';
 
 export default defineComponent({
   name: "Info",
@@ -10,24 +9,19 @@ export default defineComponent({
     game: {},
   },
 
-
   data() {
     return {
-      gameInfo : {
+      gameInfo: {
         description: "",
       },
       GameDetails: {},
-
     }
   },
-
 
   watch: {
     async game() {
       const url = "https://api.rawg.io/api/games/" + this.game.id + "?key=2fe636237e6942a1afa7b7e75c21acc8";
-      const response = await fetch(url, {
-
-      });
+      const response = await fetch(url, {});
       const result = await response.json();
 
       const curGame = result;
@@ -37,11 +31,7 @@ export default defineComponent({
       let doc = new DOMParser().parseFromString(this.gameInfo.description, 'text/html')
       this.gameInfo.description = doc.body.textContent;
     },
-
-
   },
-
-//vhtml
 
   methods: {
     addGame: async function (event) {
@@ -95,12 +85,8 @@ export default defineComponent({
     const userStore = useUserStore();
     return {userStore};
   },
+});
 
-
-
-
-
-  });
 </script>
 
 
@@ -111,15 +97,6 @@ export default defineComponent({
     <div class="card has-text-white-bis" id="cardCol">
       <div class="card-image">
         <h1 class="title has-text-white-bis has-text-centered">{{ game.name }}</h1>
-
-<!--        <figure class="image is-4by3">-->
-<!--          <div class="fade">-->
-<!--            <div class="shadow">-->
-<!--              <img :src="game.image" alt="Placeholder image">-->
-<!--            </div>-->
-
-<!--          </div>-->
-<!--        </figure>-->
 
         <video controls muted autoplay :key="getVideo(game)" width="1280" height="720">
           <source :src='getVideo(game)' type="video/mp4">
@@ -151,14 +128,14 @@ export default defineComponent({
 
         </div>
         <div>
-        <button class="button is-link modal-button fa fa-plus"
-                data-target="modal-image2"
-                :data-gameid="game.name"
-                id="LightBlueTextYellow"
-                v-if="userStore.user.username"
-                @click="addGame">
-          Add to Library
-        </button>
+          <button class="button is-link modal-button fa fa-plus"
+                  data-target="modal-image2"
+                  :data-gameid="game.name"
+                  id="LightBlueTextYellow"
+                  v-if="userStore.user.username"
+                  @click="addGame">
+            Add to Library
+          </button>
         </div>
       </div>
     </div>
@@ -172,8 +149,6 @@ export default defineComponent({
 .fade {
   animation: fadeIn 6s;
   background-blend-mode: hard-light;
-
-
 }
 
 .shadow {
