@@ -52,10 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <template>
 
-  <!--  <br/>-->
-  <!--  <br/>-->
-  <!--  <br/>-->
-  <!--  <br/>-->
+
 
   <!--  <h2>Welcome , {{ userStore.user.username }}</h2>-->
 
@@ -65,9 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
     </header>
 
 
+
     <main class="ml-4">
       <router-view></router-view>
     </main>
+
 
     <!--  <HomePage></HomePage>-->
     <Footer>

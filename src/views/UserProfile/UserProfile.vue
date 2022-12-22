@@ -103,80 +103,61 @@ export default defineComponent({
 
 <template>
 
-  <div id="bgr">
+  <body id="bgr">
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="logo">
-      <b>US<span>ER</span><span>&nbsp</span>PR<span>OF</span>ILE</b>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="table-container ">
+    <div class="container hero is-fullheight-with-navbar">
+<!--      <header class="has-text-centered">-->
+        <br>
+        <br>
+        <br>
 
-      <!--  <header class="has-text-centered" >-->
-      <div class="is-size-5-widescreen is-centered">
-      <table class="table is-align-content-center has-text-centered">
+<!--      </header>-->
 
-        <tr>
-          <th class="has-text-centered">Game Name</th>
-          <th class="has-text-centered">Status</th>
-          <th class="has-text-centered">Delete</th>
+      <section class="hero is-transparent is-fullheight">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <div class="column is-4 is-offset-4">
+                      <div class="logo">
+                        <b>US<span>ER</span><span>&nbsp</span>PR<span>OF</span>ILE</b>
+                      </div>
 
+              <div class="table-container is-center ">
+                <table class="table is-align-content-center has-text-centered " id="tabler">
 
-        </tr>
+                  <tr>
+                    <th class="has-text-centered">Game Name</th>
+                    <th class="has-text-centered">Status</th>
+                    <th class="has-text-centered">Delete</th>
+                  </tr>
 
-        <tr v-for="game in games">
-          <td>{{ game.gameid }}</td>
-          <td>
-
-            <div class="dropdown is-hoverable select">
-              <select @change="updateGame" :data-game="game.gameid" :value="game.gamestatus">
-                <option value="Choose">Choose</option>
-                <option value="Started">Started</option>
-                <option value="Wishlist">Wishlist</option>
-                <option value="Beaten">Beaten</option>
-              </select>
+                  <tr v-for="game in games">
+                    <td>{{ game.gameid }}</td>
+                    <td>
+                      <div class="dropdown is-hoverable select">
+                        <select @change="updateGame" :data-game="game.gameid" :value="game.gamestatus">
+                          <option value="Choose">Choose</option>
+                          <option value="Started">Started</option>
+                          <option value="Wishlist">Wishlist</option>
+                          <option value="Beaten">Beaten</option>
+                        </select>
+                      </div>
+                    </td>
+                    <td>
+                      <button @click="deleteGameConfirm(game.gameid)" class="button is-link modal-button fa fa-minus"
+                              id="DarkBlueTextYellow">Delete
+                      </button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
-          </td>
-          <td>
-            <button @click="deleteGameConfirm(game.gameid)" class="button is-link modal-button fa fa-minus"
-                    id="DarkBlueTextYellow">Delete
-            </button>
-          </td>
-
-        </tr>
-      </table>
-      </div>
+          </div>
+        </div>
+      </section>
     </div>
-
-    <div class='container hero is-fullheight is-centered'>
-
-
-    </div>
+  </body>
 
 
-    <!--  </header>-->
-  </div>
 </template>
 
 
@@ -187,12 +168,13 @@ export default defineComponent({
   opacity: 100%;
 }
 
-html, body {
-  height: 50%
-}
+/*html, body {*/
+/*  height: 50%*/
+/*}*/
 
 body {
-  background: #112 url(//images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg) center no-repeat;
+  /*background: #112 url(images.weserv.nl/?url=i.imgur.com/6QJjYMe.jpg) center no-repeat;*/
+  background: center no-repeat;
   background-size: cover;
   margin: 0
 }
@@ -200,15 +182,14 @@ body {
 .logo {
   text-align: center;
   width: 60%;
-  height: 0px;
+
   margin: auto;
   position: relative;
-  top: -40px;
-  left: 0;
-  right: 0;
+  /*top: -100px;*/
+  left: -100px;
+  right: 0px;
   bottom: 0;
   user-select: none;
-
 }
 
 
@@ -260,28 +241,36 @@ body {
   }
 }
 
-#btn-twtr{
-  clear:both;
-  color:#fff;
-  border:2px solid;
-  border-radius:3px;
-  text-align:center;
-  text-decoration:none;
-  display:block;
-  font-family:sans-serif;
-  font-size:14px;
-  width:13em;
-  padding:5px 10px;
-  font-weight:600;
-  position:absolute;
-  bottom:20px;
-  left:0;
-  right:0;
-  margin:0 auto;
-  background:rgba(0,0,0,0.2);
-  box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
-  opacity:0.4
+#btn-twtr {
+  clear: both;
+  color: #fff;
+  border: 2px solid;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-family: sans-serif;
+  font-size: 14px;
+  width: 13em;
+  padding: 5px 10px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0px 3px rgba(0, 0, 0, 0.2);
+  opacity: 0.4
 }
-#btn-twtr:hover{color:#fff;opacity:1}
+
+#btn-twtr:hover {
+  color: #fff;
+  opacity: 1
+}
+
+#tabler {
+ opacity: 99%;
+}
 
 </style>
