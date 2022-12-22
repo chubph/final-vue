@@ -87,11 +87,23 @@ export default defineComponent({
     <div class="container hero is-fullheight">
       <header class="has-text-centered"><br> <br> <br></header>
       <section class="hero is-transparent is-fullheight">
+
         <div class="hero-body">
           <div class="container has-text-centered">
-            <div class="column is-4 is-offset-4"><h3 class="title has-text-white">Login</h3>
+            <div class="column is-4 is-offset-4">
+              <div class="container">
+                <div class="columns">
+                  <div class="column">
+                    <div class="neon">Log </div>
+                  </div>
+                  <div class="column">
+                    <div class="flux">In </div>
+                  </div>
+                </div>
+              </div>
+<!--            <div class="column is-4 is-offset-4"><h3 class="title has-text-white">Login</h3>-->
               <hr class="login-hr" id="colYellow">
-              <p class="subtitle has-text-white">Please login to proceed.</p>
+<!--              <p class="subtitle has-text-white">Please login to proceed.</p>-->
               <div class="box" id="DarkBlue">
                 <figure class="avatar">
                   <img src="../../assets/mkafnobg.png">
@@ -132,5 +144,85 @@ export default defineComponent({
   </div>
 </template>
 <style scoped>
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: table;
+  background-color: black;
+}
 
+@font-face {
+  font-family: "Comic Sans MS";
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+/*.container {*/
+/*  display: table-cell;*/
+/*  text-align: center;*/
+/*  vertical-align: middle;*/
+/*}*/
+
+.neon {
+  font-family: neon;
+  color: #FB4264;
+  font-size: 6vw;
+  line-height: 9vw;
+  text-shadow: 0 0 3vw #F40A35;
+}
+
+.flux {
+  font-family: neon;
+  color: #426DFB;
+  font-size: 6vw;
+  line-height: 9vw;
+  text-shadow: 0 0 3vw #2356FF;
+}
+
+.neon {
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw yellow, 0 0 3vw yellow, 0 0 10vw yellow, 0 0 10vw yellow, 0 0 .4vw yellow, .5vw .5vw .1vw #806914;
+    color:#cdc50e;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #cdc50e, 0 0 1.5vw #cdc50e, 0 0 5vw #cdc50e, 0 0 5vw #cdc50e, 0 0 .2vw #cdc50e, .5vw .5vw .1vw #40340A;
+    color: #cdc50e;
+  }
+}
+
+.flux {
+  animation: flux 1s linear infinite;
+  -moz-animation: flux 1s linear infinite;
+  -webkit-animation: flux 1s linear infinite;
+  -o-animation: flux 1s linear infinite;
+}
+
+@keyframes flux {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+    color: #146C80;
+  }
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 50; /* Firefox */
+}
+
+#DarkBlue{
+  opacity: 85%;
+}
 </style>
