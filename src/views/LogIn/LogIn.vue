@@ -134,9 +134,9 @@ export default defineComponent({
                   </button>
                 </form>
               </div>
-              <p class="has-text-grey">
+              <p>
                 <a id="signuplink" href="../#/signup">Not a member?
-                  <br>Register here</a></p></div>
+                  <br>Sign up here</a></p></div>
           </div>
         </div>
       </section>
@@ -218,11 +218,19 @@ body {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: cadetblue;
+  color: cadetblue !important;
   opacity: 50; /* Firefox */
 }
 
 #DarkBlue{
   opacity: 85%;
+}
+
+#signuplink{
+  color:yellow;
+  font-size: x-large;
+  font-weight: bold;
+  background-color: #071e36;
+
 }
 </style>
