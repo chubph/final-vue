@@ -95,7 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
   background: radial-gradient(circle, rgba(7,30,54,1) 35%, rgba(2,0,36,1) 100%, rgba(54,54,54,1) 100%);
 
 }
-
+#bgr {
+  background-image: url("background/controllers.jpg");
+  opacity: 100%;
+}
 /*html, body {*/
 /*  height: 100vh;*/
 /*}*/

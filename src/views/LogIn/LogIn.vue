@@ -83,7 +83,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="bg-img">
+  <div id="bgr">
     <div class="container hero is-fullheight">
       <header class="has-text-centered"><br> <br> <br></header>
       <section class="hero is-transparent is-fullheight">
@@ -131,4 +131,6 @@ export default defineComponent({
     </div>
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+
+</style>
