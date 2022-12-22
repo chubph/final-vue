@@ -152,8 +152,9 @@ export default defineComponent({
             <div class="dropdown is-hoverable select">
               <select @change="updateGame" :data-game="game.gameid" :value="game.gamestatus">
                 <option value="Choose">Choose</option>
-                <option value="Wanted">Wanted</option>
-                <option value="Played">Played</option>
+                <option value="Started">Started</option>
+                <option value="Wishlist">Wishlist</option>
+                <option value="Beaten">Beaten</option>
               </select>
             </div>
           </td>

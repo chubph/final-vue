@@ -55,6 +55,8 @@ export default defineComponent({
         const bodyAddGame = JSON.stringify({
           username: this.userStore.user.username,
           gameid: event.target.dataset.gameid,
+          gamestatus: "Choose"
+
         });
 
         const response = await fetch(apiUrlAddGame, {
