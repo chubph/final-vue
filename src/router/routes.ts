@@ -2,6 +2,7 @@ import LogIn from '../views/LogIn/LogIn.vue';
 import SignUp from "../views/SignUp/SignUp.vue";
 import HomePage from "@/views/HomePage/HomePage.vue";
 import UserProfile from "@/views/UserProfile/UserProfile.vue";
+import Thx from "@/views/Thx/Thx.vue";
 
 
 export const routes = [
@@ -25,5 +26,10 @@ export const routes = [
         name: 'userprofile',
         path: '/userprofile',
         component: UserProfile,
+    },
+    {
+        name: 'thx',
+        path: '/thx',
+        component: Thx,
     },
 ];
