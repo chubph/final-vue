@@ -122,19 +122,19 @@ export default defineComponent({
                       </div>
 
               <div class="table-container is-center ">
-                <table class="table is-align-content-center has-text-centered " id="tabler">
+                <table class="table is-align-content-center has-text-centered has-text-white has-text-weight-bold " id="tabler">
 
                   <tr>
-                    <th class="has-text-centered">Game Name</th>
-                    <th class="has-text-centered">Status</th>
-                    <th class="has-text-centered">Delete</th>
+                    <th class="has-text-centered has-text-white ">Game Name</th>
+                    <th class="has-text-centered has-text-white">Status</th>
+                    <th class="has-text-centered has-text-white">Delete</th>
                   </tr>
 
                   <tr v-for="game in games">
                     <td>{{ game.gameid }}</td>
                     <td>
-                      <div class="dropdown is-hoverable select">
-                        <select @change="updateGame" :data-game="game.gameid" :value="game.gamestatus">
+                      <div class="dropdown is-hoverable select ">
+                        <select class="has-text-weight-bold" @change="updateGame" :data-game="game.gameid" :value="game.gamestatus">
                           <option value="Choose">Choose</option>
                           <option value="Started">Started</option>
                           <option value="Wishlist">Wishlist</option>
@@ -143,7 +143,7 @@ export default defineComponent({
                       </div>
                     </td>
                     <td>
-                      <button @click="deleteGameConfirm(game.gameid)" class="button is-link modal-button fa fa-minus"
+                      <button @click="deleteGameConfirm(game.gameid)" class="button is-link modal-button fa fa-minus has-text-weight-bold"
                               id="DarkBlueTextYellow">Delete
                       </button>
                     </td>
@@ -164,7 +164,7 @@ export default defineComponent({
 <style scoped>
 
 #bgr {
-  background-image: url("background/controllers.jpg");
+  background-image: url("background/empty-dark-room-modern-futuristic-sci-fi-background-3d-illustration.jpg");
   opacity: 100%;
 }
 
@@ -186,7 +186,7 @@ body {
   margin: auto;
   position: relative;
   /*top: -100px;*/
-  left: -100px;
+  left: -140px;
   right: 0px;
   bottom: 0;
   user-select: none;
@@ -196,7 +196,7 @@ body {
 .logo b {
   font: 200 10vh "Vibur";
   color: #fee;
-  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #5404ad, 0 0 0.5em #002ec2, 0 0 0.1em #002ec2, 0 10px 3px #000;
 }
 
 .logo b span {
@@ -270,7 +270,9 @@ body {
 }
 
 #tabler {
- opacity: 99%;
+ opacity: 60%;
+  background-color: #071e36;
+  text-decoration-color: white;
 }
 
 </style>
