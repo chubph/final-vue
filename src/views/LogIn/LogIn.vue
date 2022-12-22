@@ -22,16 +22,6 @@ export default defineComponent({
   },
 
   methods: {
-
-    changeNav() {
-      if (this.isLoggedIn === false) {
-        this.isLoggedIn = true;
-      } else {
-        this.isLoggedIn = false;
-      }
-      console.log(this.isLoggedIn);
-    },
-
     getApi2:async function(){
         const apiUrlLogin = "http://localhost:8080/api/userbyusername";
         const bodyLogin = JSON.stringify({

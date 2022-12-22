@@ -13,7 +13,7 @@ export default defineComponent({
   <footer>
     <div class="content has-text-centered">
       <p>
-        <strong>MKAF</strong> by <a href="#">MKAF Awesome Developers INC</a>. © 2022 All Rights Reserved.  </p>
+        <strong>MKAF</strong> by <a href="#">MKAF Industries</a>. © 2022 All Rights Reserved.  </p>
     </div>
   </footer>
 
