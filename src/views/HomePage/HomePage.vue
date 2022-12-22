@@ -150,7 +150,7 @@ export default defineComponent({
 </script>
 
 <template>
-<div id="bgr">
+<div id="">
   <div class='container hero is-fullheight'>
     <header class="has-text-centered">
       <br>
