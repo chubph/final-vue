@@ -13,8 +13,7 @@ export default defineComponent({
   <footer>
     <div class="content has-text-centered">
       <p>
-        <strong>Bulma</strong> by <a href="#">MKAF</a>. The source code is not licensed LOL
-      </p>
+        <strong>MKAF</strong> by <a href="#">MKAF Awesome Developers INC</a>. © 2022 All Rights Reserved.  </p>
     </div>
   </footer>
 
