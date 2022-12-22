@@ -13,7 +13,7 @@ export default defineComponent({
   <footer>
     <div class="content has-text-centered">
       <p>
-        <strong>Bulma</strong> by <a href="#">Alex</a>. The source code is not licensed LOL
+        <strong>Bulma</strong> by <a href="#">MKAF</a>. The source code is not licensed LOL
       </p>
     </div>
   </footer>
